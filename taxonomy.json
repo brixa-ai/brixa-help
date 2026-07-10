@@ -1,0 +1,83 @@
+{
+  "defaultLocale": "en",
+  "locales": ["en"],
+  "categories": [
+    {
+      "slug": "getting-started",
+      "name": "Getting Started",
+      "description": "Core orientation for hotel staff who are new to Brixa or need a quick refresher on the platform.",
+      "order": 1,
+      "articleOrder": ["what-brixa-does", "access-and-login", "daily-workflow"]
+    },
+    {
+      "slug": "inbox-and-conversations",
+      "name": "Inbox and Conversations",
+      "description": "How staff manage guest conversations, review thread activity, and reply inside Brixa.",
+      "order": 2,
+      "articleOrder": ["viewing-conversations", "replying-to-guests", "conversation-statuses"]
+    },
+    {
+      "slug": "quotes-and-offers",
+      "name": "Quotes and Offers",
+      "description": "How staff create, review, send, and track quotes throughout the guest journey.",
+      "order": 3,
+      "articleOrder": ["creating-and-sending-quotes", "quote-statuses", "quote-expiry-and-follow-ups"]
+    },
+    {
+      "slug": "guest-booking-actions",
+      "name": "Guest Booking Actions",
+      "description": "What happens after a guest responds to a quote, including acceptance, changes, and cancellations.",
+      "order": 4,
+      "articleOrder": ["acceptances-and-missing-data", "modifications-and-changes", "cancellations"]
+    },
+    {
+      "slug": "reservations",
+      "name": "Reservations",
+      "description": "How accepted quotes move toward reservation handling, including readiness, hold states, and confirmed outcomes.",
+      "order": 5,
+      "articleOrder": ["reservation-readiness", "reservation-flow", "reservation-states"]
+    },
+    {
+      "slug": "escalations-and-human-intervention",
+      "name": "Escalations and Human Intervention",
+      "description": "How Brixa flags cases that need staff review or manual handling.",
+      "order": 6,
+      "articleOrder": ["when-brixa-escalates", "handling-intervention-cases", "blocked-or-closed-flows"]
+    },
+    {
+      "slug": "channels-and-messaging",
+      "name": "Channels and Messaging",
+      "description": "How guest communication works across WhatsApp, Instagram, and related messaging constraints.",
+      "order": 7,
+      "articleOrder": ["channel-basics", "messaging-windows-and-limits", "delivery-and-template-issues"]
+    },
+    {
+      "slug": "hotel-setup",
+      "name": "Hotel Setup",
+      "description": "How teams configure the hotel's commercial and operational information inside Brixa.",
+      "order": 8,
+      "articleOrder": ["hotel-profile", "rooms-products-and-amenities", "guest-categories-and-policies"]
+    },
+    {
+      "slug": "pms-and-integrations",
+      "name": "PMS and Integrations",
+      "description": "How Brixa connects to external systems and what staff should know about PMS-related behavior.",
+      "order": 9,
+      "articleOrder": ["pms-connection-setup", "sync-behavior", "integration-errors-and-recovery"]
+    },
+    {
+      "slug": "troubleshooting",
+      "name": "Troubleshooting",
+      "description": "Fast answers for when something is not working as expected in daily operations.",
+      "order": 10,
+      "articleOrder": ["quote-issues", "messaging-issues", "reservation-and-sync-issues"]
+    },
+    {
+      "slug": "account-and-team-management",
+      "name": "Account and Team Management",
+      "description": "How teams manage access, permissions, and multi-property usage.",
+      "order": 11,
+      "articleOrder": ["users-and-access", "permissions", "multi-hotel-workflows"]
+    }
+  ]
+}

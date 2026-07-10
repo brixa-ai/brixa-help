@@ -1,0 +1,10 @@
+{
+  "name": "brixa-help",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Brixa knowledge base — source of truth for the help center published to GitHub Pages and synced to Crisp",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node --test scripts/"
+  }
+}
