@@ -21,6 +21,7 @@ Whenever a feature changes **user-visible behavior** in Brixa, this knowledge ba
 
 ## Voice rules
 
+- **Teach how to USE Brixa, never how it works inside.** Articles explain what the user sees and does — find, open, review, send, resolve. Do NOT describe internal mechanics: decision logic ("Brixa analyzes/decides…"), detection/AI behavior, thresholds, retry counts, reminder pacing, follow-up limits, caching windows, prioritization rules, trigger taxonomies, or data-flow narratives. This is competitive information. Litmus test per paragraph: "Does a hotelier need this to complete a task?" If it explains system behavior, cut it or reduce it to the minimal user-visible consequence. (Platform-public constraints like WhatsApp's 24-hour window are fine — they're Meta's rules, not ours.)
 - Audience is **hotel staff**, not developers. Task-oriented, plain language.
 - NEVER use internal jargon: no pipeline phases, queue names, entity/class names ("Phase 2.2", "BullMQ", "ThreadTurn", "HITL", etc.). Describe what the user sees and does.
 - The quote status is called **"Options Presented"** — never "DiscussingOptions".

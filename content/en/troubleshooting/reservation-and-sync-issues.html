@@ -2,30 +2,30 @@
 <p>Quick fixes for bookings that haven't reached your PMS, reservations stuck on missing details, availability mismatches, expired holds, and temporary PMS outages.</p>
 
 <h2>An accepted booking hasn't appeared in the PMS</h2>
-<p><strong>Likely cause:</strong> The booking isn't ready yet (required guest details are still missing), reservation writing isn't enabled for your hotel, or the PMS couldn't be reached at the moment of creation.</p>
+<p>Either the booking isn't complete yet, or reservation writing isn't enabled for your hotel.</p>
 <ol>
-<li>Open the conversation in Brixa and check the booking panel — if details are missing, the reservation is intentionally on hold. See <a href="../reservations/reservation-readiness.html">Reservation Readiness</a>.</li>
+<li>Open the conversation in Brixa and check the booking panel — if guest details are missing, the reservation is on hold until they arrive. See <a href="../reservations/reservation-readiness.html">Reservation Readiness</a>.</li>
 <li>Confirm reservation writing is switched on for your hotel; without it, staff enter bookings manually. See <a href="../pms-and-integrations/pms-connection-setup.html">Connecting Your PMS</a>.</li>
-<li>If the booking was ready and writing is enabled, treat it as a connection issue: enter the reservation in your PMS by hand using the details in Brixa, then see <a href="../pms-and-integrations/integration-errors-and-recovery.html">PMS Issues and Recovery</a>.</li>
+<li>If the booking was complete and writing is enabled, enter the reservation in your PMS by hand using the details in Brixa, then see <a href="../pms-and-integrations/integration-errors-and-recovery.html">PMS Issues and Recovery</a>.</li>
 </ol>
 
 <h2>A booking is stuck as "not ready"</h2>
-<p><strong>Likely cause:</strong> A required guest detail — typically the full name or email address — is still missing. Brixa keeps asking the guest and will not move a half-filled booking into your systems.</p>
+<p>A required guest detail — typically the full name or email address — is still missing.</p>
 <ol>
 <li>Check the guest details section of the booking to see exactly what is incomplete.</li>
-<li>If you already have the information, enter it yourself — that completes readiness immediately.</li>
+<li>If you already have the information, enter it yourself — that completes the booking immediately.</li>
 <li>If the guest has gone quiet, send a short personal follow-up. See <a href="../reservations/reservation-readiness.html">Reservation Readiness</a> and <a href="../guest-booking-actions/acceptances-and-missing-data.html">Quote Acceptances and Missing Guest Details</a>.</li>
 </ol>
 
 <h2>Availability in quotes doesn't match the PMS</h2>
-<p><strong>Likely cause:</strong> Brixa briefly holds on to recently fetched availability to keep quotes fast, so a change you just made in your PMS — closing a room, taking a walk-in — can take a few minutes to show up in new quotes. This short lag is normal, not an error.</p>
+<p>A change you just made in your PMS — closing a room, taking a walk-in — can take a few minutes to show up in new quotes.</p>
 <ol>
 <li>Wait a few minutes and check a new quote for the same dates.</li>
 <li>If the mismatch persists well beyond that, or quotes offer rooms your PMS says are sold out, contact Brixa's team. See <a href="../pms-and-integrations/sync-behavior.html">What Syncs Between Brixa and Your PMS</a>.</li>
 </ol>
 
 <h2>A hold or optional reservation expired</h2>
-<p><strong>Likely cause:</strong> A pending hold has a time limit, and nobody finalized it before the limit ran out. The PMS released the room back to sale — normal behavior, but the guest no longer has a booking.</p>
+<p>Nobody finalized the hold before its time limit, so the PMS released the room back to sale and the guest no longer has a booking.</p>
 <ol>
 <li>Contact the guest to confirm they still want the stay.</li>
 <li>Create a fresh booking — availability and price may have changed since the original quote.</li>
@@ -33,10 +33,10 @@
 </ol>
 
 <h2>The PMS connection is temporarily down</h2>
-<p><strong>Likely cause:</strong> Your PMS is unreachable. Brixa never guesses availability or prices: it retries quietly, and if a guest is left waiting it flags the conversation for your team instead.</p>
+<p>Your PMS is unreachable, so conversations that need availability or prices may be flagged for your team.</p>
 <ol>
 <li>Check your PMS directly — it is always the source of truth.</li>
 <li>Answer any flagged guests yourself using what the PMS shows.</li>
-<li>Enter urgent reservations manually; Brixa will not create duplicates of bookings you've already handled once the connection recovers.</li>
+<li>Enter urgent reservations manually in your PMS.</li>
 <li>If the outage persists, contact support with the conversation reference. Full steps in <a href="../pms-and-integrations/integration-errors-and-recovery.html">PMS Issues and Recovery</a>.</li>
 </ol>
