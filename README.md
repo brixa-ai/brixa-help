@@ -17,6 +17,8 @@ brixa-help/
 │   └── en/                          one folder per locale (en only today; it/, es/ later)
 │       └── <category-slug>/         one folder per category — exactly ONE level deep
 │           └── <article-slug>.html  one file per article, plain basic HTML
+├── assets/
+│   └── brand/                       Brixa logos + favicon (copied into dist/ by the build)
 ├── scripts/
 │   ├── build.js                     static site generator (Node, zero dependencies)
 │   └── crisp-sync.js                Crisp API sync (placeholder — not implemented yet)
