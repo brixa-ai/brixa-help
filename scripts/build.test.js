@@ -46,6 +46,19 @@ test('build generates home, category and article pages', () => {
   assert.match(art, /<a href="\.\.\/index\.html">/);
 });
 
+test('build generates support page with ticket form and header links', () => {
+  const root = makeFixture();
+  build(root);
+  const support = fs.readFileSync(path.join(root, 'dist', 'en', 'support.html'), 'utf8');
+  assert.match(support, /<form id="ticket">/);
+  assert.match(support, /mailto:support@brixa\.ai/);
+  assert.match(support, /id="urgency"/);
+  const home = fs.readFileSync(path.join(root, 'dist', 'en', 'index.html'), 'utf8');
+  assert.match(home, /https:\/\/status\.brixa\.ai/);
+  assert.match(home, /id="status-dot"/);
+  assert.match(home, /href="support\.html"/);
+});
+
 test('build fails loudly on article without h1', () => {
   const root = makeFixture();
   fs.writeFileSync(path.join(root, 'content', 'en', 'getting-started', 'broken.html'), '<p>No title.</p>');
@@ -58,7 +71,7 @@ test('all internal links in fixture dist resolve to files', () => {
   for (const page of collectPages(path.join(root, 'dist'))) {
     const html = fs.readFileSync(page, 'utf8');
     for (const [, href] of html.matchAll(/href="([^"#]+)"/g)) {
-      if (/^https?:/.test(href)) continue;
+      if (/^[a-z][a-z0-9+.-]*:/i.test(href)) continue; // skip external schemes (https:, mailto:, ...)
       const target = path.resolve(path.dirname(page), href);
       assert.ok(fs.existsSync(target), `${page} -> broken link ${href}`);
     }
@@ -72,7 +85,7 @@ test('real repo content builds and all internal links resolve', () => {
   for (const page of collectPages(dist)) {
     const html = fs.readFileSync(page, 'utf8');
     for (const [, href] of html.matchAll(/href="([^"#]+)"/g)) {
-      if (/^https?:/.test(href)) continue;
+      if (/^[a-z][a-z0-9+.-]*:/i.test(href)) continue; // skip external schemes (https:, mailto:, ...)
       const target = path.resolve(path.dirname(page), href);
       assert.ok(fs.existsSync(target), `${page} -> broken link ${href}`);
     }
