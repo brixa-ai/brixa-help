@@ -1,0 +1,35 @@
+<h1>What Syncs Between Brixa and Your PMS</h1>
+<p>Brixa reads availability from your PMS when building quotes and, if enabled, writes reservations when guests accept — nothing else in your PMS is touched.</p>
+
+<h2>The short version</h2>
+<table>
+<thead>
+<tr><th>Direction</th><th>What moves</th><th>When</th></tr>
+</thead>
+<tbody>
+<tr><td>PMS to Brixa</td><td>Room availability and inventory</td><td>Whenever Brixa prepares or refreshes quote options</td></tr>
+<tr><td>Brixa to PMS</td><td>New reservations, with guest details and notes</td><td>When a guest accepts a quote (only if reservation writing is enabled)</td></tr>
+</tbody>
+</table>
+
+<h2>What Brixa reads</h2>
+<p>When a guest asks about a stay, Brixa checks your PMS for the rooms available on the requested dates and builds quote options from that inventory. This also happens when a quote needs to be re-prepared — for example after the guest changes dates or party size. Staff do not need to trigger anything; the check is part of how quotes are built.</p>
+
+<h2>What Brixa writes</h2>
+<p>If reservation writing is enabled for your hotel, an accepted quote becomes a reservation in your PMS automatically. The reservation carries what the guest agreed to — dates, the selected room, guest count, and price — along with the guest's contact details and any notes or special requests captured in the conversation, so your front desk sees them where they already work. If writing is not enabled, Brixa hands the completed booking to your team for manual entry instead. See <a href="../reservations/reservation-flow.html">From Accepted Quote to Reservation</a> for the full journey.</p>
+
+<h2>What is never synced</h2>
+<p>Brixa does not change your PMS setup. Specifically, it never:</p>
+<ul>
+<li>Modifies your rates, rate plans, or pricing rules</li>
+<li>Adds, removes, or reconfigures room types</li>
+<li>Edits or cancels reservations that already exist in your PMS</li>
+<li>Blocks inventory or changes restrictions</li>
+</ul>
+<p>The only thing Brixa ever creates in your PMS is a new reservation from an accepted quote.</p>
+
+<h2>How fresh is the availability?</h2>
+<p>To keep quotes fast, Brixa may briefly hold on to recently fetched availability. In practice this means a change you make in your PMS — closing a room, taking a walk-in booking — can take a few minutes to be reflected in new Brixa quotes. This window is short, but worth knowing if you are testing the connection or making last-minute inventory changes during busy periods.</p>
+
+<h2>Your PMS remains authoritative</h2>
+<p>Your PMS is always the source of truth. Brixa reads from it and writes new reservations into it, but the PMS record is the one that counts for operations, billing, and reporting. If Brixa and your PMS ever seem to disagree, trust the PMS and check <a href="integration-errors-and-recovery.html">PMS Issues and Recovery</a> for what to do next.</p>
