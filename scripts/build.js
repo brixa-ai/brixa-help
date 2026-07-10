@@ -68,6 +68,11 @@ article th,article td{border:1px solid var(--line);padding:10px 12px;text-align:
 .support button{display:inline-flex;align-items:center;gap:8px;background:var(--grad);color:#fff;padding:14px 30px;border-radius:var(--r-pill);font-family:var(--font-b);font-size:15px;font-weight:600;border:none;cursor:pointer;box-shadow:var(--sh-brand);margin-top:28px;transition:opacity .2s}
 .support button:hover{opacity:.92}
 .support .hint{font-size:13px;color:var(--muted);margin-top:12px}
+.support .hint.error{color:var(--red)}
+.support .honeypot{position:absolute;left:-9999px;top:-9999px}
+#ticket-done{display:none;border:1px solid var(--line);border-radius:var(--r-lg);padding:24px 28px;background:var(--surface)}
+#ticket-done h2{margin:0 0 8px;font-size:22px}
+#ticket-done p{margin:0;color:var(--body)}
 footer{background:var(--ink);color:rgba(255,255,255,.72)}
 .footer-inner{max-width:960px;margin:0 auto;padding:32px 24px;display:flex;align-items:center;gap:16px;font-size:13.5px}
 footer img{height:28px;display:block}
@@ -89,13 +94,37 @@ var st='up';for(var i=0;i<s.length;i++){if(s[i].status==='down'){st='down';break
 d.className='dot '+st}).catch(function(){})})();
 </script>`;
 
+// Sends the ticket without opening a mail client: POSTs to FormSubmit.co's AJAX
+// endpoint, which relays it as an email to support@brixa.ai (reply-to = requester).
 const SUPPORT_SCRIPT = `<script>
 document.getElementById('ticket').addEventListener('submit',function(e){
 e.preventDefault();
 var v=function(id){return document.getElementById(id).value.trim()};
-var subject='[Support]['+v('urgency')+'] '+v('subject')+' \\u2014 '+v('hotel');
-var body='Hotel: '+v('hotel')+'\\nName: '+v('name')+'\\nEmail: '+v('email')+'\\nTopic: '+v('topic')+'\\nUrgency: '+v('urgency')+'\\nReference: '+(v('reference')||'-')+'\\n\\nWhat happened:\\n'+v('description')+'\\n\\n\\u2014 Sent from the Brixa Help Center';
-window.location.href='mailto:support@brixa.ai?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+var btn=document.getElementById('ticket-submit'),msg=document.getElementById('ticket-msg');
+btn.disabled=true;btn.textContent='Sending\\u2026';msg.textContent='';msg.className='hint';
+fetch('https://formsubmit.co/ajax/support@brixa.ai',{
+method:'POST',
+headers:{'Content-Type':'application/json','Accept':'application/json'},
+body:JSON.stringify({
+_subject:'[Support]['+v('urgency')+'] '+v('subject')+' \\u2014 '+v('hotel'),
+_template:'table',
+_captcha:'false',
+_replyto:v('email'),
+_honey:document.getElementById('company_site').value,
+'Hotel':v('hotel'),'Name':v('name'),'Email':v('email'),'Topic':v('topic'),'Urgency':v('urgency'),'Reference':v('reference')||'-','What happened':v('description')
+})
+}).then(function(r){return r.json()}).then(function(res){
+if(res&&(res.success===true||res.success==='true')){
+document.getElementById('ticket').style.display='none';
+var ok=document.getElementById('ticket-done');
+ok.style.display='block';
+document.getElementById('ticket-done-email').textContent=v('email');
+}else{throw new Error((res&&res.message)||'send failed')}
+}).catch(function(){
+btn.disabled=false;btn.textContent='Open support ticket';
+msg.className='hint error';
+msg.innerHTML='Something went wrong sending your ticket. Please email us directly at <a href="mailto:support@brixa.ai">support@brixa.ai</a>.';
+});
 });
 </script>`;
 
@@ -150,7 +179,11 @@ ${STATUS_SCRIPT}${extraScript || ''}
 function supportBody() {
   return `<div class="support">
 <h1>Contact Support</h1>
-<p>Tell us what's going on and we'll get back to you. Submitting this form opens a pre-filled email to support@brixa.ai in your email app — review it and hit send.</p>
+<p>Tell us what's going on and we'll get back to you at your work email. Tickets go straight to the Brixa support team.</p>
+<div id="ticket-done">
+<h2>Ticket sent</h2>
+<p>Thanks — your ticket is on its way to the Brixa support team. We'll reply to <strong id="ticket-done-email"></strong>.</p>
+</div>
 <form id="ticket">
 <label for="hotel">Hotel name</label>
 <input id="hotel" type="text" required>
@@ -180,8 +213,10 @@ function supportBody() {
 <textarea id="description" required placeholder="What you did, what you expected, and what you saw instead."></textarea>
 <label for="reference">Conversation, quote, or guest reference <em>(optional)</em></label>
 <input id="reference" type="text">
-<button type="submit">Open email to support</button>
-<p class="hint">Prefer to write it yourself? Email us directly at support@brixa.ai.</p>
+<div class="honeypot" aria-hidden="true"><label for="company_site">Company site</label><input id="company_site" type="text" tabindex="-1" autocomplete="off"></div>
+<button type="submit" id="ticket-submit">Open support ticket</button>
+<p class="hint" id="ticket-msg"></p>
+<p class="hint">Prefer email? Reach us directly at <a href="mailto:support@brixa.ai">support@brixa.ai</a>.</p>
 </form>
 </div>`;
 }

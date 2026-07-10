@@ -51,7 +51,8 @@ test('build generates support page with ticket form and header links', () => {
   build(root);
   const support = fs.readFileSync(path.join(root, 'dist', 'en', 'support.html'), 'utf8');
   assert.match(support, /<form id="ticket">/);
-  assert.match(support, /mailto:support@brixa\.ai/);
+  assert.match(support, /formsubmit\.co\/ajax\/support@brixa\.ai/);
+  assert.match(support, /Open support ticket/);
   assert.match(support, /id="urgency"/);
   const home = fs.readFileSync(path.join(root, 'dist', 'en', 'index.html'), 'utf8');
   assert.match(home, /https:\/\/status\.brixa\.ai/);
