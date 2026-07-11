@@ -30,7 +30,17 @@ nav.crumbs a{color:var(--muted);text-decoration:none}
 nav.crumbs a:hover{color:var(--cyan)}
 .tag{display:inline-block;background:var(--grad);color:#fff;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:var(--r-pill)}
 .hero h1{font-size:44px;margin:16px 0 10px}
-.hero p{color:var(--muted);font-size:16.5px;margin:0 0 40px;max-width:560px}
+.hero p{color:var(--muted);font-size:16.5px;margin:0 0 24px;max-width:560px}
+.search{max-width:560px;margin:0 0 40px}
+.search input{width:100%;font-family:var(--font-b);font-size:16px;color:var(--ink);background:var(--white);border:1.5px solid var(--line);border-radius:var(--r-pill);padding:14px 22px;transition:border-color .2s,box-shadow .2s}
+.search input:focus{outline:none;border-color:var(--cyan);box-shadow:0 6px 18px rgba(64,164,255,.14)}
+ul.results{list-style:none;padding:0;margin:0}
+ul.results li{padding:16px 0;border-bottom:1px solid var(--line)}
+ul.results a{font-weight:600;font-size:17px;color:var(--ink);text-decoration:none}
+ul.results a:hover{color:var(--cyan)}
+ul.results .cat{display:inline-block;margin-left:10px;background:var(--surface);color:var(--muted);font-size:12px;font-weight:600;padding:2px 10px;border-radius:var(--r-pill);vertical-align:2px}
+ul.results p{margin:6px 0 0;font-size:14.5px;color:var(--muted)}
+ul.results li.none{color:var(--muted);font-size:15px}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;padding:0;list-style:none;margin:0}
 .cards li{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 24px;background:var(--white);transition:transform .2s var(--ease),box-shadow .2s,border-color .2s}
 .cards li:hover{transform:translateY(-3px);border-color:var(--light-blue);box-shadow:var(--sh-card)}
@@ -126,6 +136,34 @@ msg.className='hint error';
 msg.innerHTML='Something went wrong sending your ticket. Please email us directly at <a href="mailto:support@brixa.ai">support@brixa.ai</a>.';
 });
 });
+</script>`;
+
+// Home-page search over the per-locale search-index.json the build emits.
+// Every query token must match; hits are ranked title > excerpt > body.
+const SEARCH_SCRIPT = `<script>
+(function(){
+var input=document.getElementById('kb-search');if(!input)return;
+var res=document.getElementById('search-results'),cards=document.getElementById('category-cards');
+var idx=null;
+function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+function load(){return idx?Promise.resolve(idx):fetch('search-index.json').then(function(r){return r.json()}).then(function(d){idx=d;return d})}
+input.addEventListener('input',function(){
+var q=input.value.trim().toLowerCase();
+if(!q){res.style.display='none';res.innerHTML='';cards.style.display='grid';return}
+load().then(function(data){
+var tokens=q.split(/\\s+/),scored=[];
+for(var i=0;i<data.length;i++){var a=data[i],s=0,ok=true;
+for(var j=0;j<tokens.length;j++){var t=tokens[j];
+var ti=a.t.toLowerCase().indexOf(t)>=0,ex=a.e.toLowerCase().indexOf(t)>=0,bo=a.b.indexOf(t)>=0;
+if(!ti&&!ex&&!bo){ok=false;break}
+s+=(ti?3:0)+(ex?2:0)+(bo?1:0)}
+if(ok)scored.push([s,a])}
+scored.sort(function(x,y){return y[0]-x[0]});
+var out='';
+for(var k=0;k<Math.min(scored.length,10);k++){var a=scored[k][1];
+out+='<li><a href="'+a.u+'">'+esc(a.t)+'</a><span class="cat">'+esc(a.c)+'</span><p>'+esc(a.e)+'</p></li>'}
+res.innerHTML=out||'<li class="none">No results. Try different words, or <a href="support.html">contact support</a>.</li>';
+res.style.display='block';cards.style.display='none'})})})();
 </script>`;
 
 function esc(s) {
@@ -258,8 +296,11 @@ function build(root) {
     }).join('\n');
     fs.writeFileSync(path.join(localeDist, 'index.html'), page({
       title: 'Brixa Help Center', homeHref: 'index.html', assetPrefix: '../', hasAssets, crumbs: [],
-      body: `<div class="hero"><span class="tag">Help Center</span>\n<h1>How can we help?</h1>\n<p>Guides and answers for hotel teams working with Brixa — conversations, quotes, reservations, and more.</p></div>\n<ul class="cards">\n${cards}\n</ul>`,
+      body: `<div class="hero"><span class="tag">Help Center</span>\n<h1>How can we help?</h1>\n<p>Guides and answers for hotel teams working with Brixa — conversations, quotes, reservations, and more.</p>\n<div class="search"><input id="kb-search" type="search" placeholder="Search for a topic — quotes, WhatsApp, reservations…" autocomplete="off"></div></div>\n<ul class="results" id="search-results" style="display:none"></ul>\n<ul class="cards" id="category-cards">\n${cards}\n</ul>`,
+      extraScript: SEARCH_SCRIPT,
     }));
+
+    const searchIndex = [];
 
     fs.writeFileSync(path.join(localeDist, 'support.html'), page({
       title: 'Contact Support — Brixa Help Center', homeHref: 'index.html', assetPrefix: '../', hasAssets,
@@ -278,6 +319,10 @@ function build(root) {
         const html = fs.readFileSync(file, 'utf8');
         const title = extractTitle(html, file);
         const excerpt = extractExcerpt(html, file);
+        searchIndex.push({
+          t: title, e: excerpt, c: cat.name, u: `${cat.slug}/${slug}.html`,
+          b: html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().toLowerCase(),
+        });
         items.push(`<li><a href="${slug}.html">${esc(title)}</a><p>${esc(excerpt)}</p></li>`);
         fs.writeFileSync(path.join(catDist, `${slug}.html`), page({
           title: `${title} — Brixa Help Center`, homeHref: '../index.html', assetPrefix: '../../', hasAssets,
@@ -291,6 +336,8 @@ function build(root) {
         body: `<div class="cat-head"><h1>${esc(cat.name)}</h1>\n<p>${esc(cat.description)}</p></div>\n<ul class="articles">\n${items.join('\n')}\n</ul>`,
       }));
     }
+
+    fs.writeFileSync(path.join(localeDist, 'search-index.json'), JSON.stringify(searchIndex));
   }
   return dist;
 }

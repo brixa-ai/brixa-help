@@ -60,6 +60,19 @@ test('build generates support page with ticket form and header links', () => {
   assert.match(home, /href="support\.html"/);
 });
 
+test('build emits search index and home search bar', () => {
+  const root = makeFixture();
+  build(root);
+  const home = fs.readFileSync(path.join(root, 'dist', 'en', 'index.html'), 'utf8');
+  assert.match(home, /id="kb-search"/);
+  assert.match(home, /search-index\.json/);
+  const idx = JSON.parse(fs.readFileSync(path.join(root, 'dist', 'en', 'search-index.json'), 'utf8'));
+  assert.equal(idx.length, 1);
+  assert.equal(idx[0].t, 'What Brixa Does');
+  assert.equal(idx[0].u, 'getting-started/what-brixa-does.html');
+  assert.match(idx[0].b, /brixa answers guests/);
+});
+
 test('build fails loudly on article without h1', () => {
   const root = makeFixture();
   fs.writeFileSync(path.join(root, 'content', 'en', 'getting-started', 'broken.html'), '<p>No title.</p>');
@@ -70,7 +83,7 @@ test('all internal links in fixture dist resolve to files', () => {
   const root = makeFixture();
   build(root);
   for (const page of collectPages(path.join(root, 'dist'))) {
-    const html = fs.readFileSync(page, 'utf8');
+    const html = fs.readFileSync(page, 'utf8').replace(/<script[\s\S]*?<\/script>/g, '');
     for (const [, href] of html.matchAll(/href="([^"#]+)"/g)) {
       if (/^[a-z][a-z0-9+.-]*:/i.test(href)) continue; // skip external schemes (https:, mailto:, ...)
       const target = path.resolve(path.dirname(page), href);
@@ -84,7 +97,7 @@ test('real repo content builds and all internal links resolve', () => {
   if (!fs.existsSync(path.join(repoRoot, 'content', 'en'))) return; // no content yet
   const dist = build(repoRoot);
   for (const page of collectPages(dist)) {
-    const html = fs.readFileSync(page, 'utf8');
+    const html = fs.readFileSync(page, 'utf8').replace(/<script[\s\S]*?<\/script>/g, '');
     for (const [, href] of html.matchAll(/href="([^"#]+)"/g)) {
       if (/^[a-z][a-z0-9+.-]*:/i.test(href)) continue; // skip external schemes (https:, mailto:, ...)
       const target = path.resolve(path.dirname(page), href);
