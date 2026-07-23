@@ -49,7 +49,7 @@
       "name": "Channels and Messaging",
       "description": "How guest communication works across WhatsApp, Instagram, and related messaging constraints.",
       "order": 7,
-      "articleOrder": ["channel-basics", "messaging-windows-and-limits", "delivery-and-template-issues"]
+      "articleOrder": ["channel-basics", "website-concierge-overview", "configure-website-concierge", "install-website-concierge", "messaging-windows-and-limits", "delivery-and-template-issues"]
     },
     {
       "slug": "hotel-setup",

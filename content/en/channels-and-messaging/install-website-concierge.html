@@ -1,0 +1,27 @@
+<h1>Install the Website Concierge on Your Website</h1>
+<p>Add the Brixa Assistant snippet to your hotel website after you have enabled and saved Brixa Concierge. This article covers safe placement, a production example, and what to do after a widget key changes.</p>
+
+<h2>Copy the current snippet from Brixa</h2>
+<p>In <strong>Sales</strong> → <strong>Brixa Concierge</strong>, select the hotel and use <strong>Copy snippet</strong>. Give the copied snippet to the person who manages your website. Do not reuse a snippet from another hotel or an old document; each hotel needs its current widget key.</p>
+
+<h2>Production snippet</h2>
+<p>For a production website, the snippet has this form. Replace <strong>&lt;widget key from Brixa Concierge&gt;</strong> with the current key copied from Brixa.</p>
+<p>&lt;script&gt; window.__BRIXA_ASSISTANT_CONFIG__ = { widgetKey: "&lt;widget key from Brixa Concierge&gt;" }; &lt;/script&gt;</p>
+<p>&lt;script async src="https://assistant.brixa.ai/loader/brixa-assistant.js"&gt;&lt;/script&gt;</p>
+
+<h2>Place it on the website</h2>
+<p>Add both script tags to every page where guests should be able to use Brixa Assistant. They can go in the page head or body. Keep them in the order shown: the configuration script must come before the loader script.</p>
+<p>Do not change the property name or add other settings to the configuration. Use the copied snippet as it appears in Brixa, with the current widget key.</p>
+
+<h2>Test before publishing widely</h2>
+<ol>
+  <li>Open a page from an allowed website origin in a private browser window.</li>
+  <li>Check that the Brixa Assistant chat option appears in the position you chose.</li>
+  <li>Open the chat and send a simple guest question.</li>
+  <li>Confirm that the conversation appears in the selected hotel's Brixa inbox.</li>
+  <li>Review the greeting, suggested questions, color, and placement on desktop and mobile.</li>
+</ol>
+<p>If the chat does not appear, first confirm that the exact website origin is listed in Brixa Concierge and that the page uses the current copied snippet. For configuration help, see <a href="configure-website-concierge.html">Configure the Website Concierge</a>. If it still does not appear, contact Brixa support with the website address and a screenshot.</p>
+
+<h2>After you regenerate a key</h2>
+<p>A regenerated widget key replaces the previous one. Copy the new snippet from Brixa Concierge and update every page that uses the old snippet. Test each website again after publishing the change.</p>
