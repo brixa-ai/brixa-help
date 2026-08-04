@@ -2,23 +2,27 @@
 <p>When a guest accepts a quote, your team is alerted right away so you can confirm the booking quickly, and the guest is asked for any details that are still missing.</p>
 
 <h2>What you'll see when a guest accepts</h2>
-<p>A guest can accept a quote directly from the quote page, or by saying so in the conversation. Either way, the quote shows <strong>Accepted by Guest</strong>. Accepted quotes are time-sensitive: a quick confirmation from your hotel keeps the guest confident and reduces the risk of losing the booking.</p>
+<p>A guest can accept a quote directly from the quote page, or by saying so in the conversation. Either way, the quote shows <strong>Accepted by Guest</strong>. As soon as the hold exists in your PMS — automatically for hotels with automatic reservation creation enabled, or once your team creates it — the quote moves to <strong>Tentatively Booked</strong> while the guest completes payment. Accepted and tentatively booked quotes are both time-sensitive: keeping the process moving keeps the guest confident and reduces the risk of losing the booking.</p>
 
 <h2>How your team is notified</h2>
-<p>Every active user at your hotel receives an email the moment a quote is accepted. The email summarizes the booking — guest name, dates, room type, number of guests, total amount, and days until check-in — and offers direct actions:</p>
+<p>Every active user at your hotel receives an email the moment a quote is accepted. The email summarizes the booking — guest name, dates, room type, number of guests, total amount, and days until check-in — and lays out what's left, which depends on whether your hotel creates holds automatically:</p>
 <ul>
-  <li><strong>Confirm the booking</strong> if you can honor it.</li>
-  <li><strong>Cancel as sold out</strong> if the room is no longer available.</li>
-  <li><strong>View in Brixa</strong> to open the quote and the conversation.</li>
+  <li><strong>Automatic reservation creation:</strong> the hold is already created and the guest already has payment instructions — the email tells you to wait for payment, then confirm.</li>
+  <li><strong>No automatic reservation creation:</strong> the email walks you through creating the hold in your PMS, marking the quote Tentatively Booked in Brixa, and confirming once payment is in.</li>
 </ul>
-<p>If the acceptance is still waiting, you may receive a reminder email until someone confirms or cancels the quote.</p>
+<p>The email also offers direct actions — <strong>Confirm the booking</strong>, <strong>Cancel as sold out</strong> if the room is no longer available, and <strong>View in Brixa</strong> to open the quote and the conversation. If a quote is still waiting on you, you may receive a reminder email until it is confirmed or cancelled — this covers both Accepted by Guest and Tentatively Booked quotes.</p>
 
 <h2>When guest details are still missing</h2>
 <p>Sometimes a guest accepts before sharing everything needed to register the booking — most commonly their full name or email address. In that case the guest receives a message, in their own language, asking for the missing details. The conversation shows that request, and the quote already shows as accepted, so you do not need to chase the guest yourself in the normal case.</p>
 <p>Which details are required, and how far a booking can progress without them, is explained in <a href="../reservations/reservation-readiness.html">Reservation Readiness</a>.</p>
 
+<h2>While the guest completes payment</h2>
+<p>Once the hold exists, the quote's status changes to <strong>Tentatively Booked</strong> and stays there until you confirm. The guest sees a message that their reservation is being held, with your payment instructions for the option they chose and the date the hold needs to be finalized by.</p>
+<p>Confirm the booking — in Brixa or in your PMS — once payment or a guarantee is in place. If nothing happens before that date, the quote expires automatically and the room goes back on sale. See <a href="../reservations/reservation-states.html">Reservation States Explained</a> for how this fits with your PMS.</p>
+
 <h2>When to step in</h2>
 <ol>
+  <li><strong>Create the hold if it isn't automatic.</strong> Hotels with automatic reservation creation get the hold and the Tentatively Booked status without any action; otherwise, create the hold in your PMS and mark the quote Tentatively Booked yourself.</li>
   <li><strong>Confirm or release the room promptly.</strong> The acceptance email exists so a person makes this call — Brixa does not confirm bookings on your behalf.</li>
   <li><strong>If the guest goes quiet</strong>, consider reaching out personally. A short human message often unblocks a guest who ignored the automated request.</li>
   <li><strong>If the guest provides details that look wrong</strong> — a misspelled email, an incomplete name — correct them in the conversation or the quote before confirming.</li>

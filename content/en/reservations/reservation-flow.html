@@ -2,7 +2,7 @@
 <p>When a guest accepts a quote and all required details are complete, the booking becomes a reservation — in your PMS automatically when that is enabled for your hotel, or ready for your team to enter manually when it is not.</p>
 
 <h2>Where the reservation appears</h2>
-<p>If your hotel has a connected PMS with automatic reservation creation enabled, the reservation appears in your PMS with the details the guest agreed to: stay dates, the selected room, the number of guests, and the total price. Depending on your setup, it may first appear as a hold rather than a final confirmed booking — see <a href="reservation-states.html">Reservation States Explained</a> for what each state means.</p>
+<p>If your hotel has a connected PMS with automatic reservation creation enabled, the reservation appears in your PMS with the details the guest agreed to: stay dates, the selected room, the number of guests, and the total price. Depending on your setup, it may first appear as a hold rather than a final confirmed booking — the quote in Brixa shows <strong>Tentatively Booked</strong> while that's the case. See <a href="reservation-states.html">Reservation States Explained</a> for what each state means.</p>
 <p>If an accepted booking has not shown up as a reservation yet, some required guest details may still be missing — see <a href="reservation-readiness.html">Reservation Readiness</a> for how to check and fill them in.</p>
 
 <h2>What to verify in the PMS</h2>
@@ -11,7 +11,7 @@
 <li>The dates, room type, and guest count match the accepted quote in Brixa</li>
 <li>The price and any included extras look correct</li>
 <li>The guest's name and contact details are complete</li>
-<li>The reservation's state is what you expect — finalize any hold that needs manual confirmation under your hotel's process</li>
+<li>The reservation's state matches the quote in Brixa — Tentatively Booked while a hold is open, Confirmed once you finalize it</li>
 </ul>
 <p>Once the reservation exists in your PMS, treat the PMS as the source of truth for that booking. Changes to the stay should follow your normal PMS procedures.</p>
 
@@ -19,10 +19,11 @@
 <p>Check the notes on the PMS reservation for anything the guest mentioned during the conversation — a late arrival, an anniversary, a dietary need. Front desk and operations teams can work from the PMS as usual, without needing to open Brixa.</p>
 
 <h2>When there is no PMS connection</h2>
-<p>If your hotel does not have a connected PMS, or automatic reservation creation is not enabled, your team enters the reservation manually:</p>
+<p>If your hotel does not have a connected PMS, or automatic reservation creation is not enabled, your team handles the hold and confirmation manually:</p>
 <ol>
 <li>Open the conversation in Brixa and find the accepted booking.</li>
-<li>Copy the details — dates, room, guest count, price, guest contact details, and any notes — into your own system.</li>
-<li>Confirm with the guest under your hotel's normal process.</li>
+<li>Copy the details — dates, room, guest count, price, guest contact details, and any notes — into your own system, and create the hold under your hotel's normal process.</li>
+<li>Mark the quote <strong>Tentatively Booked</strong> in Brixa. The guest then sees a message that their reservation is being held, along with your payment instructions.</li>
+<li>Once payment or a guarantee is in place, confirm the booking in Brixa.</li>
 </ol>
 <p>The booking information stays available in the conversation, so you can always refer back to what the guest agreed to.</p>
