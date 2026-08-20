@@ -7,7 +7,7 @@
       "name": "Getting Started",
       "description": "Core orientation for hotel staff who are new to Brixa or need a quick refresher on the platform.",
       "order": 1,
-      "articleOrder": ["what-brixa-does", "access-and-login", "daily-workflow"]
+      "articleOrder": ["what-brixa-does", "onboarding-guide", "access-and-login", "daily-workflow"]
     },
     {
       "slug": "inbox-and-conversations",
