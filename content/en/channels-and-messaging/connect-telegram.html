@@ -1,0 +1,43 @@
+<h1>Connect Telegram</h1>
+<p>Give guests a Telegram button they can tap to message your hotel: you create a free Telegram bot once, paste its token into Brixa, and every Telegram conversation arrives in your inbox like any other channel.</p>
+
+<h2>How Telegram works in Brixa</h2>
+<p>On Telegram, your hotel gets its own dedicated contact address — a link like <strong>t.me/YourHotelBot</strong> — that you publish on your website, in booking emails, or as a QR code. Guests tap it, press <strong>Start</strong>, and chat with your hotel. Their messages appear in the Brixa inbox and are answered there, exactly like WhatsApp or Instagram conversations.</p>
+<p>Your team's personal or business Telegram accounts are not involved and stay untouched: only messages sent to your hotel's dedicated address reach Brixa.</p>
+<p>Guests always start the conversation — Telegram does not allow a hotel to message a person who has never opened the chat. Once a guest has started, replies and follow-ups can be sent at any time: unlike WhatsApp and Instagram, Telegram has no time window that restricts when you can respond.</p>
+
+<h2>Step 1 — Create your hotel's bot in Telegram</h2>
+<p>Telegram addresses of this kind are called bots, and creating one takes about two minutes inside the Telegram app. <strong>Create it from your hotel's own Telegram account</strong> — the bot belongs to the account that creates it, and that account controls its token. Do not use a staff member's personal account; if your hotel does not have a Telegram account yet, create one first with a phone number the hotel controls.</p>
+<ol>
+  <li>Open Telegram and search for <strong>@BotFather</strong> — Telegram's official tool for creating bots. Make sure it shows a blue verification check.</li>
+  <li>Send the message <strong>/newbot</strong>.</li>
+  <li>When asked for a name, type your hotel's name as guests should see it — for example <strong>Hotel Riva e Mare</strong>.</li>
+  <li>When asked for a username, choose one ending in "bot" — for example <strong>RivaEMareBot</strong>. This becomes your guest link, t.me/RivaEMareBot.</li>
+  <li>BotFather replies with a <strong>token</strong> — a long code like 1234567890:ABC…. Copy it.</li>
+</ol>
+<p>Treat the token like a password: anyone who has it can send messages as your hotel. Share it only by pasting it into Brixa.</p>
+
+<h2>Step 2 — Connect it in Brixa</h2>
+<ol>
+  <li>In Brixa, open <strong>Hotel Channels</strong> and find the <strong>Telegram</strong> row.</li>
+  <li>Select the connection icon to open the connection dialog.</li>
+  <li>Paste the token from BotFather and select <strong>Connect Telegram bot</strong>.</li>
+</ol>
+<p>Brixa checks the token, prepares the bot's profile with your hotel's name, and shows your guest link when the connection succeeds. If the token is rejected, copy it again from the BotFather chat — the full code, with no spaces — and retry.</p>
+<p>Each bot can be connected to one hotel. If you manage several hotels, create a separate bot for each one.</p>
+
+<h2>Step 3 — Put the link where guests can find it</h2>
+<p>The bot link is the only door into this channel, so make it visible. Use the <strong>Copy link</strong> button in the connection dialog and place the link:</p>
+<ul>
+  <li>on your website, as a "Chat with us on Telegram" button,</li>
+  <li>in booking confirmation and pre-arrival emails,</li>
+  <li>as a QR code at reception or in printed materials.</li>
+</ul>
+
+<h2>Answering Telegram guests</h2>
+<p>Telegram conversations behave like any other channel in Brixa: they appear in the inbox, replies go out from the conversation view, and photos and voice notes from guests are supported. See <a href="channel-basics.html">How Channels Work in Brixa</a> for the shared basics.</p>
+<p>If a guest blocks the bot, replies to them stop being delivered and Brixa flags the affected conversation for your team.</p>
+<p>When a guest edits a message in Telegram, the conversation in Brixa updates to show the new text. Deleted messages are different: Telegram never informs bots about deletions, so a message a guest deletes in Telegram will still appear in Brixa. This is a Telegram platform limitation, not a Brixa setting.</p>
+
+<h2>Disconnecting</h2>
+<p>Open the same connection dialog and select <strong>Disconnect bot</strong>. Guests can no longer reach you through the bot until you connect it again — reconnecting with the same token restores the channel.</p>
