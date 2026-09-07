@@ -37,6 +37,7 @@
 <h2>Answering Telegram guests</h2>
 <p>Telegram conversations behave like any other channel in Brixa: they appear in the inbox, replies go out from the conversation view, and photos and voice notes from guests are supported. See <a href="channel-basics.html">How Channels Work in Brixa</a> for the shared basics.</p>
 <p>If a guest blocks the bot, replies to them stop being delivered and Brixa flags the affected conversation for your team.</p>
+<p>When a guest edits a message in Telegram, the conversation in Brixa updates to show the new text. Deleted messages are different: Telegram never informs bots about deletions, so a message a guest deletes in Telegram will still appear in Brixa. This is a Telegram platform limitation, not a Brixa setting.</p>
 
 <h2>Disconnecting</h2>
 <p>Open the same connection dialog and select <strong>Disconnect bot</strong>. Guests can no longer reach you through the bot until you connect it again — reconnecting with the same token restores the channel.</p>
