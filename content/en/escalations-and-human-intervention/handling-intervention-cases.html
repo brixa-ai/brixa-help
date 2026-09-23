@@ -1,37 +1,46 @@
 <h1>Handling Cases That Need You</h1>
-<p>When Brixa escalates a conversation, it waits for a person on your team to review it, respond, and hand it back. This article walks through finding those conversations, understanding what happened, and resolving them cleanly.</p>
+<p>When Brixa asks for help, it's either an escalation that pauses the conversation and waits for your team, or a review flag that lets Brixa keep replying while asking for a second look. This article walks through finding both, understanding what happened, and resolving them cleanly.</p>
 
 <h2>Finding conversations that need attention</h2>
 <ol>
 <li>Sign in at app.brixa.ai and open your conversation list.</li>
-<li>Escalated conversations are marked with an alert indicator — red for urgent cases, amber for standard ones. Hovering over the indicator shows why the conversation was flagged.</li>
-<li>Use the filter for conversations in human-agent mode to see only escalated conversations, with the most urgent and oldest cases first.</li>
+<li>Escalated conversations show a shield icon — red for urgent cases, amber for standard ones. Conversations with a review flag instead show a muted flag icon. Hovering over either shows why it was flagged.</li>
+<li>Use the <strong>Escalated</strong> filter to see escalations and review flags together, with the most urgent and oldest cases first.</li>
 </ol>
-<p>You'll also receive an email notification when a conversation is escalated, so nothing depends on someone watching the inbox.</p>
+<p>You'll also receive an email notification when a conversation is escalated or flagged for review, so nothing depends on someone watching the inbox.</p>
 
 <h2>Reviewing what happened</h2>
-<p>Inside the conversation, a banner shows why Brixa asked for help in plain language, a short hint on what to do, how urgent it is, and when it was flagged. The technical details support may ask for sit behind the wrench icon on that banner. Before acting, get the full picture:</p>
+<p>For an escalation, the banner inside the conversation reads "Manual Review Required" and tells you in plain language why it appeared, a short hint on what to do, and when it was flagged; the composer carries the same tag while it's paused. For a review flag, a neutral banner reads "Flagged for review" and shows when it was flagged — nothing is paused, and Brixa keeps replying while you look into it. To see why a conversation was flagged for review, hover over the flag icon in your conversation list. The technical details support may ask for sit behind the wrench icon on either banner. Before acting, get the full picture:</p>
 <ul>
 <li>Read the guest's recent messages to understand what they actually want.</li>
 <li>Check what Brixa already replied or drafted. In some cases you'll find a suggested reply waiting that you can edit and send.</li>
 <li>Review the booking details and any quote in the conversation, so your answer matches what the guest was offered.</li>
 </ul>
 
-<h2>Resolving the case</h2>
+<h2>Resolving an escalation</h2>
 <p>What resolution looks like depends on the reason for the escalation:</p>
 <ul>
 <li><strong>Reply to the guest.</strong> Write your own message or start from Brixa's draft. Sending manually always works, even while the conversation is escalated.</li>
 <li><strong>Decide on a change.</strong> For modifications to a booking that already has a hold in place — Tentatively Booked or Confirmed by Hotel — accept or decline the change in the conversation. Either way, review the reply to the guest before it goes out so it says what you intend.</li>
 <li><strong>Fix the underlying issue.</strong> If the escalation came from missing or wrong information — booking details, availability, a PMS problem — correct it first so the same issue doesn't recur.</li>
 </ul>
-<p>When the case is handled, use the option to resume automation in the conversation. Brixa takes the conversation back, and paused follow-ups are re-evaluated so the guest isn't forgotten.</p>
+<p>When the case is handled, select <strong>Resume</strong> in the conversation. Brixa takes the conversation back, and paused follow-ups are re-evaluated so the guest isn't forgotten.</p>
+
+<h2>Handling a review flag</h2>
+<p>A review flag doesn't stop anything — Brixa keeps replying to the guest while you look into it. Hover over the flag icon in your conversation list to see why it was raised, then open the conversation and read the guest's recent messages.</p>
+<ul>
+<li><strong>Nothing to do.</strong> If the flag doesn't need action — you've checked and everything is in order — select <strong>Dismiss</strong> on the banner.</li>
+<li><strong>Needs a closer look.</strong> If you decide the conversation should be handled by a person, select <strong>Escalate</strong>. This turns the review flag into a full escalation, pausing automation until someone resumes it.</li>
+</ul>
+<p>If a flag has disappeared by the time you get to it, the conversation moved on without needing you — nothing further is required.</p>
 
 <h2>Escalating a conversation yourself</h2>
-<p>You can also put any conversation into human hands manually — useful when you're negotiating something special or you know a guest needs personal treatment. Add a short reason so colleagues understand why automation is paused.</p>
+<p>You can also put any conversation into human hands manually — useful when you're negotiating something special or you know a guest needs personal treatment. Add a short reason so colleagues understand why automation is paused. This has the same effect as selecting Escalate on a review flag: automation pauses until someone resumes it.</p>
 
 <h2>Good habits</h2>
 <ul>
-<li>Respond to urgent cases within minutes — the guest is usually waiting.</li>
+<li>Respond to urgent escalations within minutes — the guest is usually waiting.</li>
 <li>Before resuming automation, make sure the guest's last message has an answer and the booking details are correct, so Brixa continues from a clean state.</li>
+<li>Don't let review flags pile up — dismiss the ones you've already looked at so the flag icon keeps meaning something.</li>
 <li>Don't leave conversations escalated indefinitely; while escalated, Brixa won't reply or follow up automatically. If a conversation truly can't continue, see <a href="blocked-or-closed-flows.html">When a Conversation Can't Continue Automatically</a>.</li>
 </ul>
