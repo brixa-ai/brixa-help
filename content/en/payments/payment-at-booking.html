@@ -32,12 +32,7 @@
 
 <h2>What you see</h2>
 <p>On the conversation and on the quote page, a small pill next to the quote status shows where things stand: <strong>Awaiting payment</strong> or <strong>Awaiting card</strong> while the link is open, then <strong>Paid</strong> or <strong>Card on file</strong>. Hovering over it shows the amount and when it was received; a click opens the payment in Stripe.</p>
-<p>Three situations raise an alert in the conversation, like any other escalation (see <a href="../escalations-and-human-intervention/when-brixa-escalates.html">When Brixa Escalates</a>):</p>
-<ul>
-  <li><strong>Brixa couldn't create a payment link for this booking.</strong> Send the guest your payment details the way you normally would, then confirm the booking once the payment arrives.</li>
-  <li><strong>The guest has paid, but the reservation couldn't be confirmed in your PMS.</strong> Confirm the reservation in your PMS; Brixa picks the confirmation up from there.</li>
-  <li><strong>A payment arrived that doesn't match this booking.</strong> Check it in Stripe before you confirm the booking or refund the guest. The pill reads <strong>Needs review</strong> until you do.</li>
-</ul>
+<p>If a payment needs a decision from you, the conversation shows an alert like any other escalation (see <a href="../escalations-and-human-intervention/when-brixa-escalates.html">When Brixa Escalates</a>). The banner tells you what happened and what to do — for example, to send the guest your payment details yourself, to confirm the reservation in your PMS, or to check a payment in Stripe before you confirm the booking or refund the guest. While a payment is waiting for that check, the pill reads <strong>Needs review</strong>.</p>
 
 <h2>Before you rely on it at the desk</h2>
 <p>Payments and saved cards live in your Stripe account, not in your PMS. Read <a href="payments-at-check-in.html">Check Stripe Before Charging at Check-in</a> so nobody charges a guest twice.</p>
