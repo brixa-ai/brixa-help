@@ -15,6 +15,10 @@ Structure: Workflow-first, one subcategory layer
 | Escalations and Human Intervention | `escalations-and-human-intervention` | How Brixa flags cases that need staff review or manual handling. |
 | Channels and Messaging | `channels-and-messaging` | How guest communication works across WhatsApp, Instagram, and related messaging constraints. |
 | Hotel Setup | `hotel-setup` | How teams configure the hotel's commercial and operational information inside Brixa. |
+| Payments | Connect Stripe | `payments/connect-stripe` | How a hotel admin connects the hotel's Stripe account and what the connection can and cannot do. |
+| Payments | Payment at Booking | `payments/payment-at-booking` | The per-policy choice between nothing, full payment and a card guarantee, and what guests and staff see. |
+| Payments | Payments at Check-in | `payments/payments-at-check-in` | Checking Stripe before charging a guest, a no-show or a late cancellation. |
+| Payments | `payments` | How guests pay or leave a card guarantee through a secure link, and what to check before charging at the desk. |
 | PMS and Integrations | `pms-and-integrations` | How Brixa connects to external systems and what staff should know about PMS-related behavior. |
 | Troubleshooting | `troubleshooting` | Fast answers for when something is not working as expected in daily operations. |
 | Account and Team Management | `account-and-team-management` | How teams manage access, permissions, and multi-property usage. |

@@ -1,0 +1,42 @@
+<h1>Connect Stripe to Collect Payments</h1>
+<p>Connect your hotel's Stripe account once, and Brixa can send guests a secure link to pay for a booking or to leave a card as a guarantee. The money goes straight to your Stripe account — Brixa never holds it.</p>
+
+<h2>What you need</h2>
+<ul>
+  <li>A Stripe account that belongs to the hotel. The person who owns it must be the one who logs in during the connection.</li>
+  <li>The Stripe account's currency must match the currency set for the hotel in Brixa. If they differ, the connection is saved but no payment links are created until they match.</li>
+  <li>A Brixa login with the hotel admin role. Admins see <strong>Hotel Settings</strong> in the menu; other staff do not.</li>
+</ul>
+<p>A Stripe account created and managed by another platform (for example, by a booking engine) cannot be connected. Stripe also does not accept card payments in every country; if Stripe is not available where your hotel operates, this feature is not available either.</p>
+
+<h2>Step 1 — Open Payments Settings</h2>
+<ol>
+  <li>In Brixa, open <strong>Hotel Settings</strong>.</li>
+  <li>Select <strong>Payments Settings</strong>. The <strong>Stripe</strong> card shows <strong>No Stripe account connected</strong>.</li>
+</ol>
+
+<h2>Step 2 — Connect with Stripe</h2>
+<ol>
+  <li>Select <strong>Connect with Stripe</strong>. Brixa takes you to Stripe.</li>
+  <li>Log in to Stripe as the owner of the hotel's account and approve the connection. Brixa asks only for what it needs to create payment links and read their status.</li>
+  <li>Stripe returns you to Brixa. The card now reads <strong>Connected</strong> with the account's name, its currency and the date of the connection.</li>
+</ol>
+<p>If you close or cancel the Stripe screen, Brixa shows <strong>The connection was cancelled in Stripe</strong>. Nothing was changed; select <strong>Connect with Stripe</strong> again when you are ready.</p>
+
+<h2>Reading the Stripe card</h2>
+<ul>
+  <li><strong>Can accept payments</strong> — everything is in place. Guests will receive links as soon as a cancellation policy asks for a payment or a card (next section).</li>
+  <li><strong>Can't accept payments yet. Finish setting up the account in Stripe.</strong> — Stripe still needs information from the hotel (identity, bank account, business details). Complete it in Stripe; Brixa picks the new state up on its own.</li>
+  <li><strong>The Stripe account's currency doesn't match the hotel's currency</strong> — fix one of the two. Payment links stay off until they match.</li>
+  <li><strong>Open in Stripe</strong> — opens your Stripe dashboard in a new tab, where every payment and saved card collected through Brixa lives.</li>
+</ul>
+
+<h2>What changes for guests</h2>
+<p>Connecting Stripe alone changes nothing in your conversations. Brixa sends a payment link only when the quote's cancellation policy says the guest must pay or leave a card at booking. Set that per policy: see <a href="payment-at-booking.html">Ask Guests to Pay or Leave a Card at Booking</a>.</p>
+
+<h2>Disconnecting</h2>
+<p>On the Stripe card, select <strong>Disconnect</strong> and confirm. Brixa stops creating payment links for this hotel; links already sent stop working and show the guest that the link is no longer active. Payments already made stay in your Stripe account. You can connect the same account again at any time.</p>
+<p>Removing Brixa from inside your Stripe dashboard has the same effect: the card in Brixa shows the account as disconnected.</p>
+
+<h2>What Brixa can and cannot do with your account</h2>
+<p>Brixa never sees your Stripe login, your bank details or your customers' card numbers. Through the connection it can create the secure checkout pages guests pay on and read whether a payment or a card guarantee went through. It cannot refund, pay out, transfer money or change your bank account. Refunds, disputes and payouts are handled by you, in Stripe, exactly as for any other payment.</p>

@@ -1,0 +1,43 @@
+<h1>Ask Guests to Pay or Leave a Card at Booking</h1>
+<p>Each cancellation policy has a setting called <strong>What the guest must do to book</strong>. Once your Stripe account is connected, it decides whether a guest booking under that policy receives a secure link to pay in full or to leave a card as a guarantee while their room is held.</p>
+
+<h2>The three choices</h2>
+<table>
+  <thead>
+    <tr><th>Setting</th><th>What the guest does</th><th>Typical use</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Nothing — the hotel arranges payment itself</strong></td><td>No link. The message that announces the hold repeats your payment instructions as text, as before. This is the default for every policy.</td><td>Policies you settle by bank transfer or at the desk.</td></tr>
+    <tr><td><strong>Pay in full at booking (non-refundable)</strong></td><td>The guest pays the full quote amount by card. The booking is confirmed once the payment goes through.</td><td>Non-refundable rates.</td></tr>
+    <tr><td><strong>Give a card as a guarantee (free cancellation)</strong></td><td>The guest saves a card. Nothing is charged now; the card stays in your Stripe account for no-shows and late cancellations.</td><td>Free-cancellation rates.</td></tr>
+  </tbody>
+</table>
+<p>Deposits or partial amounts are not available: a policy either asks for the full amount, a card, or nothing.</p>
+
+<h2>Where to set it</h2>
+<ol>
+  <li>Open <strong>Hotel Settings</strong> and go to your cancellation policies — the same place where you edit their names and descriptions (see <a href="../hotel-setup/guest-categories-and-policies.html">Guest Categories and Policies</a>).</li>
+  <li>Edit the policy and choose an option under <strong>What the guest must do to book</strong>.</li>
+  <li>Save. The choice applies to quotes that reach the hold stage from now on; links already sent keep the terms they were sent with.</li>
+</ol>
+<p>This choice is yours alone: a PMS connection updates a policy's description and payment instructions, but never this setting. The setting only takes effect while Stripe is connected under <strong>Payments Settings</strong> and the card there reads <strong>Can accept payments</strong>; otherwise Brixa falls back to your payment instructions as text.</p>
+
+<h2>What the guest experiences</h2>
+<ol>
+  <li>When the quote reaches <strong>Tentatively Booked</strong> — the room is on hold — the message announcing the hold carries the link. In your conversation view it appears as <strong>Secure your booking</strong>; the quote page shows the same action as a button to pay or to add a card.</li>
+  <li>The link opens a secure checkout page in the guest's language, showing your hotel's name and the stay dates. It works until the end of the day the quote is valid, the same deadline as the hold. A guest who leaves the page can come back and try again before then.</li>
+  <li>When the payment or the card goes through, Brixa sends the guest a short receipt in the conversation, in their language, and the quote moves to <strong>Confirmed by Hotel</strong>. If the hotel has a connected PMS, the reservation is confirmed there too. Hotels without a PMS confirm the hold in their own systems as they do today.</li>
+</ol>
+<p>Brixa never tells a guest that a payment was received unless it really went through. If a guest writes "I paid" and nothing has arrived, the conversation is flagged for your team instead.</p>
+
+<h2>What you see</h2>
+<p>On the conversation and on the quote page, a small pill next to the quote status shows where things stand: <strong>Awaiting payment</strong> or <strong>Awaiting card</strong> while the link is open, then <strong>Paid</strong> or <strong>Card on file</strong>. Hovering over it shows the amount and when it was received; a click opens the payment in Stripe.</p>
+<p>Three situations raise an alert in the conversation, like any other escalation (see <a href="../escalations-and-human-intervention/when-brixa-escalates.html">When Brixa Escalates</a>):</p>
+<ul>
+  <li><strong>Brixa couldn't create a payment link for this booking.</strong> Send the guest your payment details the way you normally would, then confirm the booking once the payment arrives.</li>
+  <li><strong>The guest has paid, but the reservation couldn't be confirmed in your PMS.</strong> Confirm the reservation in your PMS; Brixa picks the confirmation up from there.</li>
+  <li><strong>A payment arrived that doesn't match this booking.</strong> Check it in Stripe before you confirm the booking or refund the guest. The pill reads <strong>Needs review</strong> until you do.</li>
+</ul>
+
+<h2>Before you rely on it at the desk</h2>
+<p>Payments and saved cards live in your Stripe account, not in your PMS. Read <a href="payments-at-check-in.html">Check Stripe Before Charging at Check-in</a> so nobody charges a guest twice.</p>
