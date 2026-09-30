@@ -1,0 +1,26 @@
+<h1>Check Stripe Before Charging at Check-in</h1>
+<p>Payments and card guarantees collected through Brixa's links live in your hotel's Stripe account, not in your PMS. Your PMS may still show the balance as due, so check what was already collected before you charge a guest at check-in, for a no-show, or for a late cancellation.</p>
+
+<h2>How to check, in order</h2>
+<p>Make this check part of the check-in routine for any booking made through Brixa.</p>
+<ol>
+  <li><strong>In Brixa.</strong> Open the conversation or the quote. Next to the quote status, the pill reads <strong>Paid</strong> when the money arrived and <strong>Card on file</strong> when the guest left a card as a guarantee. Hover over it for the amount and the date. No pill, or <strong>Awaiting payment</strong> / <strong>Awaiting card</strong>, means nothing was collected.</li>
+  <li><strong>In Stripe.</strong> A click on the pill opens the payment in your Stripe dashboard; <strong>Payments Settings</strong> has an <strong>Open in Stripe</strong> button as well. Each payment is described with your hotel's name and the stay dates, so it is easy to match to the reservation.</li>
+  <li><strong>In the conversation.</strong> The guest received a receipt message from Brixa when the payment or the card went through. It is in the thread, in their language.</li>
+</ol>
+
+<h2>At check-in</h2>
+<ul>
+  <li><strong>Paid</strong> — the stay is settled. Collect only what the quote did not include (city tax, extras) and mark the reservation as prepaid in your PMS the way you do for any prepaid booking.</li>
+  <li><strong>Card on file</strong> — nothing has been charged. Take payment as your policy says: at the desk, or by charging the saved card from Stripe.</li>
+  <li><strong>No payment through Brixa</strong> — proceed as you normally would.</li>
+</ul>
+
+<h2>No-shows and late cancellations</h2>
+<p>For a booking that carried a card guarantee, the card is stored in Stripe, not in your PMS. Charge the fee your policy allows from your Stripe dashboard, then record the outcome in your PMS. Brixa never charges a saved card on its own.</p>
+
+<h2>Refunds</h2>
+<p>Refunds are made in Stripe, like for any other card payment. Brixa cannot issue them and does not change the quote when you do. If a guest asks for a refund in the conversation, handle it in Stripe and reply to the guest yourself; see <a href="../guest-booking-actions/cancellations.html">Cancellations</a> for how cancellation requests reach you.</p>
+
+<h2>Related reading</h2>
+<p><a href="connect-stripe.html">Connect Stripe to Collect Payments</a> · <a href="payment-at-booking.html">Ask Guests to Pay or Leave a Card at Booking</a> · <a href="../reservations/reservation-states.html">Reservation States</a></p>

@@ -98,10 +98,21 @@
       ]
     },
     {
+      "slug": "payments",
+      "name": "Payments",
+      "description": "How guests pay or leave a card guarantee through a secure link, and what to check before charging at the desk.",
+      "order": 9,
+      "articleOrder": [
+        "connect-stripe",
+        "payment-at-booking",
+        "payments-at-check-in"
+      ]
+    },
+    {
       "slug": "pms-and-integrations",
       "name": "PMS and Integrations",
       "description": "How Brixa connects to external systems and what staff should know about PMS-related behavior.",
-      "order": 9,
+      "order": 10,
       "articleOrder": [
         "pms-connection-setup",
         "sync-behavior",
@@ -112,7 +123,7 @@
       "slug": "troubleshooting",
       "name": "Troubleshooting",
       "description": "Fast answers for when something is not working as expected in daily operations.",
-      "order": 10,
+      "order": 11,
       "articleOrder": [
         "quote-issues",
         "messaging-issues",
@@ -123,7 +134,7 @@
       "slug": "account-and-team-management",
       "name": "Account and Team Management",
       "description": "How teams manage access, permissions, and multi-property usage.",
-      "order": 11,
+      "order": 12,
       "articleOrder": [
         "users-and-access",
         "permissions",
