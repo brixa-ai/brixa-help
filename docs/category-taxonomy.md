@@ -15,9 +15,6 @@ Structure: Workflow-first, one subcategory layer
 | Escalations and Human Intervention | `escalations-and-human-intervention` | How Brixa flags cases that need staff review or manual handling. |
 | Channels and Messaging | `channels-and-messaging` | How guest communication works across WhatsApp, Instagram, and related messaging constraints. |
 | Hotel Setup | `hotel-setup` | How teams configure the hotel's commercial and operational information inside Brixa. |
-| Payments | Connect Stripe | `payments/connect-stripe` | How a hotel admin connects the hotel's Stripe account and what the connection can and cannot do. |
-| Payments | Payment at Booking | `payments/payment-at-booking` | The per-policy choice between nothing, full payment and a card guarantee, and what guests and staff see. |
-| Payments | Payments at Check-in | `payments/payments-at-check-in` | Checking Stripe before charging a guest, a no-show or a late cancellation. |
 | Payments | `payments` | How guests pay or leave a card guarantee through a secure link, and what to check before charging at the desk. |
 | PMS and Integrations | `pms-and-integrations` | How Brixa connects to external systems and what staff should know about PMS-related behavior. |
 | Troubleshooting | `troubleshooting` | Fast answers for when something is not working as expected in daily operations. |
@@ -51,6 +48,9 @@ Structure: Workflow-first, one subcategory layer
 | Hotel Setup | Hotel Profile | `hotel-setup/hotel-profile` | How to manage core hotel details used in guest communication and quoting. |
 | Hotel Setup | Rooms, Products, and Amenities | `hotel-setup/rooms-products-and-amenities` | How room types, products, services, and amenities are configured. |
 | Hotel Setup | Guest Categories and Policies | `hotel-setup/guest-categories-and-policies` | How guest bands, occupancy rules, and related policy settings are managed. |
+| Payments | Connect Stripe | `payments/connect-stripe` | How a hotel admin connects the hotel's Stripe account and what the connection can and cannot do. |
+| Payments | Payment at Booking | `payments/payment-at-booking` | The per-policy choice between nothing, full payment and a card guarantee, and what guests and staff see. |
+| Payments | Payments at Check-in | `payments/payments-at-check-in` | Checking Stripe before charging a guest, a no-show or a late cancellation. |
 | PMS and Integrations | PMS Connection Setup | `pms-and-integrations/pms-connection-setup` | How PMS connectivity is configured and what must be in place for it to work. |
 | PMS and Integrations | Sync Behavior | `pms-and-integrations/sync-behavior` | How data flows between Brixa and the PMS, and what is or is not synchronized. |
 | PMS and Integrations | Integration Errors and Recovery | `pms-and-integrations/integration-errors-and-recovery` | Common PMS or integration issues and the expected recovery path. |
