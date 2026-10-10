@@ -4,7 +4,7 @@
 <h2>How to check, in order</h2>
 <p>Make this check part of the check-in routine for any booking made through Brixa.</p>
 <ol>
-  <li><strong>In Brixa.</strong> Open the conversation or the quote. Next to the quote status, the pill reads <strong>Paid</strong> when the money arrived and <strong>Card on file</strong> when the guest left a card as a guarantee. Hover over it for the amount and the date. No pill, or <strong>Awaiting payment</strong> / <strong>Awaiting card</strong>, means nothing was collected.</li>
+  <li><strong>In Brixa.</strong> Open the conversation or the quote. Next to the quote status, the pill reads <strong>Paid</strong> when the full amount arrived, <strong>Deposit paid</strong> when only a deposit arrived, and <strong>Card on file</strong> when the guest left a card as a guarantee. Hover over it for the amount and the date. No pill, or <strong>Awaiting payment</strong> / <strong>Awaiting deposit</strong> / <strong>Awaiting card</strong>, means nothing was collected.</li>
   <li><strong>In Stripe.</strong> A click on the pill opens the payment in your Stripe dashboard; <strong>Payments Settings</strong> has an <strong>Open in Stripe</strong> button as well. Each payment is described with your hotel's name and the stay dates, so it is easy to match to the reservation.</li>
   <li><strong>In the conversation.</strong> The guest received a receipt message from Brixa when the payment or the card went through. It is in the thread, in their language.</li>
 </ol>
@@ -12,6 +12,7 @@
 <h2>At check-in</h2>
 <ul>
   <li><strong>Paid</strong> — the stay is settled. Collect only what the quote did not include (city tax, extras) and mark the reservation as prepaid in your PMS the way you do for any prepaid booking.</li>
+  <li><strong>Deposit paid</strong> — only the deposit was collected; hover over the pill for the amount. Collect the rest as your payment schedule says and record the deposit as a prepayment in your PMS, so the guest is not charged the deposit again at the desk.</li>
   <li><strong>Card on file</strong> — nothing has been charged. Take payment as your policy says: at the desk, or by charging the saved card from Stripe.</li>
   <li><strong>No payment through Brixa</strong> — proceed as you normally would.</li>
 </ul>
