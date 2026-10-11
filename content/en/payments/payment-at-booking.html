@@ -7,7 +7,7 @@
     <tr><th>Choice</th><th>What the guest does</th><th>Typical use</th></tr>
   </thead>
   <tbody>
-    <tr><td><strong>Nothing — no payment or card needed</strong></td><td>No payment and no card are requested. Guests are told they pay at the hotel. There is nothing to wait for: confirm the hold yourself, in Brixa or in your PMS, as soon as the guest accepts.</td><td>Rates you settle at the desk with no guarantee.</td></tr>
+    <tr><td><strong>Nothing — no payment or card needed</strong></td><td>No payment and no card are requested. Guests are told they pay at the hotel. With automatic reservation creation, the booking is confirmed automatically when the guest accepts; there is no hold stage. Without it, the quote stays <strong>Accepted by Guest</strong> and your team confirms the booking directly.</td><td>Rates you settle at the desk with no guarantee.</td></tr>
     <tr><td><strong>Per the payment instructions — the hotel collects</strong></td><td>No link. Guests receive your payment schedule and your own <strong>How to pay the hotel</strong> text. This is the default for every policy.</td><td>Bank transfers, card details by phone, or anything Brixa cannot collect for you.</td></tr>
     <tr><td><strong>Card as a guarantee (nothing charged now)</strong></td><td>The guest saves a card. Nothing is charged now; the card is there for a late cancellation or a no-show, as described in your cancellation terms.</td><td>Free-cancellation rates.</td></tr>
     <tr><td><strong>Deposit at booking</strong></td><td>The guest pays the deposit amount by card. The rest is settled later, as described in the payment schedule.</td><td>Rates with a percentage or fixed deposit.</td></tr>
@@ -20,7 +20,7 @@
 <ol>
   <li>Open <strong>Hotel Settings</strong> and go to your cancellation policies (see <a href="../hotel-setup/guest-categories-and-policies.html">Guest Categories and Policies</a>).</li>
   <li>Open a policy. The form has three sections: <strong>Cancellation terms</strong>, <strong>What the guest must do to book</strong> and <strong>Payment</strong>.</li>
-  <li>For hotels without a connected PMS, choose an option under <strong>What the guest must do to book</strong> and save. The choice applies to quotes that reach the hold stage from now on; links already sent keep the terms they were sent with.</li>
+  <li>For hotels without a connected PMS, choose an option under <strong>What the guest must do to book</strong> and save. The choice applies to quotes that reach the guarantee stage from now on; links already sent keep the terms they were sent with.</li>
 </ol>
 
 <h2>If your hotel has a connected PMS</h2>
@@ -32,16 +32,23 @@
 
 <h2>What the guest experiences</h2>
 <ol>
-  <li>When the quote reaches <strong>Tentatively Booked</strong> — the room is on hold — the message announcing the hold carries the link. In your conversation view it appears as <strong>Secure your booking</strong>; the quote page shows the same action as a button to pay or to add a card.</li>
-  <li>The link opens a secure checkout page in the guest's language, showing your hotel's name and the stay dates. It works until the end of the day the quote is valid, the same deadline as the hold. A guest who leaves the page can come back and try again before then.</li>
-  <li>When the payment or the card goes through, Brixa sends the guest a short receipt in the conversation, in their language, and the quote moves to <strong>Confirmed by Hotel</strong>. If the hotel has a connected PMS, the reservation is confirmed there too. Hotels without a PMS confirm the hold in their own systems as they do today.</li>
+  <li>When the quote reaches <strong>Awaiting Guarantee</strong>, the message asking for the guarantee carries the link. In your conversation view it appears as <strong>Secure your booking</strong>; the quote page shows the same action as a button to pay or to add a card.</li>
+  <li>The link opens a secure checkout page in the guest's language, showing your hotel's name and the stay dates. It works until the end of the day the quote is valid, the same deadline as the offer. A guest who leaves the page can come back and try again before then.</li>
+  <li>When the payment or the card goes through, Brixa sends the guest a short receipt in the conversation, in their language, and the quote moves to <strong>Confirmed by Hotel</strong>. With a connected PMS, Brixa confirms the hold or, where the PMS cannot hold rooms, creates the booking at that moment; if that fails, you receive the <strong>Payment received — create the booking in your PMS</strong> alert and create it yourself. Hotels without a PMS confirm the booking in their own systems as they do today.</li>
 </ol>
 <p>For what guests are told at each stage, see <a href="what-guests-are-told-about-your-cancellation-policy.html">What Guests Are Told About Your Cancellation Policy</a>.</p>
 <p>Brixa never tells a guest that a payment was received unless it really went through. If a guest says they have paid and you cannot find the payment in Brixa or in Stripe, ask them for their receipt or the last digits of the card they used before you confirm anything.</p>
 
+<h2>Hotels whose PMS cannot hold rooms</h2>
+<p>If your PMS cannot hold a room, no hold is created when the guest accepts, and the guest still gets the pay link. When they open it, they may see one of two messages instead of the checkout page:</p>
+<ul>
+  <li><strong>This offer has changed.</strong> The guest is pointed to the conversation, where the new options are waiting. Nothing is charged.</li>
+  <li>A page saying Brixa could not confirm their booking details and asking them to try again in a few minutes. Your team gets the <strong>Could not check the room before taking the guarantee</strong> alert. Check your PMS, then click <strong>Request guarantee</strong> or ask the guest to open the link again. See <a href="../escalations-and-human-intervention/when-brixa-escalates.html">When Brixa Asks for Human Help</a>.</li>
+</ul>
+
 <h2>What you see</h2>
-<p>On the conversation and on the quote page, a small pill next to the quote status shows where things stand: <strong>Awaiting payment</strong>, <strong>Awaiting deposit</strong> or <strong>Awaiting card</strong> while the link is open, then <strong>Paid</strong>, <strong>Deposit paid</strong> or <strong>Card on file</strong>. For a deposit the guest's receipt says a deposit was received, and <a href="payments-at-check-in.html">Payments at Check-in</a> explains what to collect at the desk. Hovering over it shows the amount and when it was received; a click opens the payment in Stripe.</p>
-<p>If a payment needs a decision from you, the conversation shows an alert like any other escalation (see <a href="../escalations-and-human-intervention/when-brixa-escalates.html">When Brixa Escalates</a>). The banner tells you what happened and what to do — for example, to send the guest your payment details yourself, to confirm the reservation in your PMS, or to check a payment in Stripe before you confirm the booking or refund the guest. While a payment is waiting for that check, the pill reads <strong>Needs review</strong>.</p>
+<p>On the conversation and on the quote page, two small pills sit next to the quote status. The first shows your PMS record: <strong>Held #123 until 12 Oct</strong>, <strong>Booked #123</strong>, <strong>Not in your PMS yet</strong> or <strong>Held by hotel</strong>. The second shows the collection and reads <strong>Awaiting payment</strong>, <strong>Awaiting deposit</strong> or <strong>Awaiting card</strong> while the link is open, then <strong>Paid</strong>, <strong>Deposit paid</strong> or <strong>Card on file</strong>. For a deposit the guest's receipt says a deposit was received, and <a href="payments-at-check-in.html">Payments at Check-in</a> explains what to collect at the desk. Hovering over it shows the amount and when it was received; a click opens the payment in Stripe.</p>
+<p>If a payment needs a decision from you, the conversation shows an alert like any other escalation (see <a href="../escalations-and-human-intervention/when-brixa-escalates.html">When Brixa Escalates</a>). The banner tells you what happened and what to do — for example, to send the guest your payment details yourself, to confirm the reservation in your PMS, or to check a payment in Stripe before you confirm the booking or refund the guest. While a payment is waiting for that check, the pill reads <strong>Needs review</strong>. <strong>Hotel collects</strong> means you take the payment yourself, as your instructions describe.</p>
 
 <h2>Before you rely on it at the desk</h2>
 <p>Payments and saved cards live in your Stripe account, not in your PMS. Read <a href="payments-at-check-in.html">Check Stripe Before Charging at Check-in</a> so nobody charges a guest twice.</p>
