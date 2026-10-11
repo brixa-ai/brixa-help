@@ -7,7 +7,7 @@
     <tr><th>Choice</th><th>What the guest does</th><th>Typical use</th></tr>
   </thead>
   <tbody>
-    <tr><td><strong>Nothing — no payment or card needed</strong></td><td>No payment and no card are requested. Guests are told they pay at the hotel. The booking is confirmed automatically when the guest accepts; there is no hold stage.</td><td>Rates you settle at the desk with no guarantee.</td></tr>
+    <tr><td><strong>Nothing — no payment or card needed</strong></td><td>No payment and no card are requested. Guests are told they pay at the hotel. With automatic reservation creation, the booking is confirmed automatically when the guest accepts; there is no hold stage. Without it, the quote stays <strong>Accepted by Guest</strong> and your team confirms the booking directly.</td><td>Rates you settle at the desk with no guarantee.</td></tr>
     <tr><td><strong>Per the payment instructions — the hotel collects</strong></td><td>No link. Guests receive your payment schedule and your own <strong>How to pay the hotel</strong> text. This is the default for every policy.</td><td>Bank transfers, card details by phone, or anything Brixa cannot collect for you.</td></tr>
     <tr><td><strong>Card as a guarantee (nothing charged now)</strong></td><td>The guest saves a card. Nothing is charged now; the card is there for a late cancellation or a no-show, as described in your cancellation terms.</td><td>Free-cancellation rates.</td></tr>
     <tr><td><strong>Deposit at booking</strong></td><td>The guest pays the deposit amount by card. The rest is settled later, as described in the payment schedule.</td><td>Rates with a percentage or fixed deposit.</td></tr>
@@ -40,10 +40,10 @@
 <p>Brixa never tells a guest that a payment was received unless it really went through. If a guest says they have paid and you cannot find the payment in Brixa or in Stripe, ask them for their receipt or the last digits of the card they used before you confirm anything.</p>
 
 <h2>Hotels whose PMS cannot hold rooms</h2>
-<p>If your PMS cannot hold a room, no hold is created when the guest accepts. The guest still gets the pay link, and when they open it Brixa checks that the room is still available and priced as quoted. If it is, they pay or leave a card as usual.</p>
+<p>If your PMS cannot hold a room, no hold is created when the guest accepts, and the guest still gets the pay link. When they open it, they may see one of two messages instead of the checkout page:</p>
 <ul>
-  <li>If the room or the price has changed, the guest sees <strong>This offer has changed</strong> and is pointed to the conversation, where the new options are waiting. Nothing is charged.</li>
-  <li>If the check could not be made, the guest sees a page saying Brixa could not confirm the offer and asking them to try again. Your team gets an alert; see <a href="../escalations-and-human-intervention/when-brixa-escalates.html">When Brixa Asks for Human Help</a> for what to do.</li>
+  <li><strong>This offer has changed.</strong> The guest is pointed to the conversation, where the new options are waiting. Nothing is charged.</li>
+  <li>A page saying Brixa could not confirm their booking details and asking them to try again in a few minutes. Your team gets the <strong>Could not check the room before taking the guarantee</strong> alert. Check your PMS, then click <strong>Request guarantee</strong> or ask the guest to open the link again. See <a href="../escalations-and-human-intervention/when-brixa-escalates.html">When Brixa Asks for Human Help</a>.</li>
 </ul>
 
 <h2>What you see</h2>
