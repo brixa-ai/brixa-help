@@ -49,7 +49,8 @@ Structure: Workflow-first, one subcategory layer
 | Hotel Setup | Rooms, Products, and Amenities | `hotel-setup/rooms-products-and-amenities` | How room types, products, services, and amenities are configured. |
 | Hotel Setup | Guest Categories and Policies | `hotel-setup/guest-categories-and-policies` | How guest bands, occupancy rules, and related policy settings are managed. |
 | Payments | Connect Stripe | `payments/connect-stripe` | How a hotel admin connects the hotel's Stripe account and what the connection can and cannot do. |
-| Payments | Payment at Booking | `payments/payment-at-booking` | The per-policy choice between nothing, full payment and a card guarantee, and what guests and staff see. |
+| Payments | Payment at Booking | `payments/payment-at-booking` | The per-policy choice between nothing, the hotel's instructions, a card guarantee, a deposit and full payment, and what guests and staff see. |
+| Payments | What Guests Are Told About Your Cancellation Policy | `payments/what-guests-are-told-about-your-cancellation-policy` | What guests hear about a policy when comparing options, on hold and at confirmation, with three example policies. |
 | Payments | Payments at Check-in | `payments/payments-at-check-in` | Checking Stripe before charging a guest, a no-show or a late cancellation. |
 | PMS and Integrations | PMS Connection Setup | `pms-and-integrations/pms-connection-setup` | How PMS connectivity is configured and what must be in place for it to work. |
 | PMS and Integrations | Sync Behavior | `pms-and-integrations/sync-behavior` | How data flows between Brixa and the PMS, and what is or is not synchronized. |
