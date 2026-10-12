@@ -104,6 +104,7 @@
       "order": 9,
       "articleOrder": [
         "connect-stripe",
+        "apaleo-pay",
         "payment-at-booking",
         "what-guests-are-told-about-your-cancellation-policy",
         "payments-at-check-in"
@@ -116,6 +117,7 @@
       "order": 10,
       "articleOrder": [
         "pms-connection-setup",
+        "connect-apaleo",
         "sync-behavior",
         "integration-errors-and-recovery"
       ]
