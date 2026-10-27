@@ -1,0 +1,47 @@
+<h1>Collect Payments with Apaleo Pay</h1>
+<p>If your hotel uses Apaleo Pay, you can connect it to Brixa so guests pay or leave a card on a Brixa payment page. The money goes to your property's own Apaleo Pay account.</p>
+
+<h2>Stripe, Apaleo Pay or both</h2>
+<p>You can connect Stripe, Apaleo Pay, or both, but only one is selected at a time. Use the <strong>Payment gateway</strong> selector at the top of <strong>Payments</strong> to choose which one guests use. Payment links already sent keep the option they were created with.</p>
+
+<h2>What you need</h2>
+<p>Your Apaleo Pay setup details, which you enter in Brixa:</p>
+<ul>
+  <li>Merchant account</li>
+  <li>Sub-merchant ID</li>
+  <li>API key</li>
+  <li>Client key</li>
+  <li>Environment: test or live</li>
+  <li>Live URL prefix (live environment only)</li>
+  <li>Apaleo account code</li>
+  <li>Property ID</li>
+</ul>
+<h3>Where to find them</h3>
+<ul>
+  <li><strong>Merchant account, Sub-merchant ID, API key, Client key and Live URL prefix</strong> come from Apaleo. Write to <a href="mailto:support@apaleo.com">support@apaleo.com</a> and ask for your property's Apaleo Pay credentials for Brixa. Apaleo issues them per property.</li>
+  <li><strong>Apaleo account code</strong> is the short code of your Apaleo account. It is not the property code.</li>
+  <li><strong>Property ID</strong> is your property's code in Apaleo. Brixa fills it in for you once the hotel is connected to Apaleo.</li>
+</ul>
+<p>In Brixa, choose the <strong>Environment</strong> first: the card then tells you where the credentials for that environment come from. The API key is secret: once you connect, Brixa does not show it again.</p>
+<p>Apaleo Pay works together with an Apaleo PMS connection for the same property; see <a href="../pms-and-integrations/connect-apaleo.html">Connect Apaleo</a>.</p>
+
+<h2>Connect Apaleo Pay</h2>
+<ol>
+  <li>In Brixa, open <strong>Hotel Settings</strong> in the menu and select <strong>Payments</strong>. The page is headed <strong>Payments Settings</strong>.</li>
+  <li>On the Apaleo Pay card, enter the details listed above, then select <strong>Connect Apaleo Pay</strong>.</li>
+  <li>The card then shows the connection with your merchant account name. A <strong>Test mode</strong> badge appears when you connected the test environment.</li>
+  <li>Make sure Apaleo Pay is the selected option under <strong>Payment gateway</strong>.</li>
+</ol>
+
+<h2>Setup needs attention</h2>
+<p>Apaleo Pay collects through the booking Brixa creates in Apaleo, so the hotel must be connected to Apaleo with <strong>Manage reservations</strong> switched on in its PMS Integration section. If Apaleo Pay is selected while either is missing, Brixa shows a <strong>Setup needs attention</strong> banner at the top of every page, with a link to the section to fix. Once fixed, select <strong>Report fixed</strong> and the banner goes away.</p>
+
+<h2>What guests see</h2>
+<p>With Apaleo Pay selected, the guest's payment link opens a Brixa card page, not Stripe. There the guest pays or leaves their card. The booking Brixa creates in Apaleo carries the payment or the card, so Apaleo can charge cancellation or no-show fees according to the rate plan's terms.</p>
+<p>When a payment link is sent depends on the cancellation policy; see <a href="payment-at-booking.html">Ask Guests to Pay or Leave a Card at Booking</a>.</p>
+
+<h2>If the amounts differ</h2>
+<p>If the booked total ever differs from what the guest paid, you see a review item on the conversation, and the confirmation message to the guest is left as a draft for you to send. Review the booking and the payment, then send the message yourself when it is right.</p>
+
+<h2>Replace credentials or disconnect</h2>
+<p>On the Apaleo Pay card, select <strong>Replace credentials</strong> to enter new details, or <strong>Disconnect</strong> to remove the connection.</p>
