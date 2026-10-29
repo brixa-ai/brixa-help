@@ -23,9 +23,36 @@
   <li>Your room types, with their photos and descriptions.</li>
   <li>Your rate plans.</li>
 </ul>
-<p>Rates become bookable through Brixa once their policies are set up in Cloudbeds.</p>
-<p>For now, guests are booked as adults only.</p>
+<p>Rates become bookable through Brixa once their cancellation policies have been read from Cloudbeds. See the next section.</p>
 <p>The sync controls in the PMS Integration section work as before. See <a href="sync-behavior.html">What Syncs Between Brixa and Your PMS</a>.</p>
+
+<h2>Cancellation policies and test bookings</h2>
+<p>Cloudbeds does not let Brixa look up a cancellation policy directly. To read each policy your hotel uses, Brixa makes one test booking per policy and cancels it right away. This happens every time Brixa syncs with Cloudbeds.</p>
+<ul>
+  <li>In Cloudbeds, the test bookings appear as <strong>cancelled</strong> reservations named <strong>Brixa Policy-Check</strong>. No fee is charged and no email is sent.</li>
+  <li>Brixa also checks the maximum number of adults and children each room type accepts. It does this with a booking that Cloudbeds refuses, so nothing is created.</li>
+  <li>Test bookings need <strong>reservation writes</strong> to be turned on for the hotel. Turn them on in the PMS Integration section, then sync again. Until then Brixa cannot read your policies, and the rates stay unavailable.</li>
+  <li>If you change a policy in Cloudbeds, sync again so Brixa picks up the change. Until you do, Brixa keeps using the previous terms.</li>
+</ul>
+<p>If a policy has no date on which a test booking can be made, for example because none of its rates can be booked in the coming year, it stays inactive. Brixa reads it again on the next sync that can, and rates that use it become available then.</p>
+
+<h2>Notes that need attention</h2>
+<p>After a sync, Brixa may show a note under <strong>Needs attention</strong>. The most common ones:</p>
+<ul>
+  <li><strong>Reservation writes are off.</strong> Policies cannot be read. Turn on reservation writes and sync again.</li>
+  <li><strong>A policy will remain inactive.</strong> Brixa could not make a test booking for it, because it has no bookable date or the test booking did not go through. Check that a rate using the policy can be booked in Cloudbeds, then sync again.</li>
+  <li><strong>A test booking was left in place.</strong> A test booking could not be cancelled. Find the reservation named Brixa Policy-Check in Cloudbeds and cancel it yourself.</li>
+  <li><strong>Age ranges are not shared.</strong> This note shows on every sync and is expected. See the next section.</li>
+</ul>
+
+<h2>Children and ages</h2>
+<p>Cloudbeds knows two kinds of guests, adults and children, and does not share age ranges with Brixa. Brixa quotes and books both, including the extra charges you set in Cloudbeds for additional adults and children. Set up the age groups in Brixa yourself:</p>
+<ol>
+  <li>Open the hotel's settings in Brixa and go to the guest age groups.</li>
+  <li><strong>Disable Infants.</strong> Cloudbeds treats a baby as a child.</li>
+  <li>Set the <strong>child age limit</strong> to match your hotel's child policy. Adults start from the next age.</li>
+  <li>If your hotel does not take children, <strong>disable Children</strong> as well.</li>
+</ol>
 
 <h2>How bookings work with Cloudbeds</h2>
 <ul>
