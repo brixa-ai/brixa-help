@@ -1,0 +1,74 @@
+<h1>Connect Cloudbeds</h1>
+<p>If your hotel runs on Cloudbeds, you can connect it to Brixa yourself, either from the hotel's settings page in Brixa or from the Cloudbeds Marketplace. Once connected, Brixa brings in your room types and rate plans and places accepted bookings in Cloudbeds.</p>
+
+<h2>What you need</h2>
+<ul>
+  <li>Access to the hotel's settings page in Brixa.</li>
+  <li>A Cloudbeds user whose role includes <strong>Rates and Policies</strong>. Without it, some details stay hidden from Brixa and the setup is incomplete.</li>
+</ul>
+
+<h2>Connect from Brixa</h2>
+<ol>
+  <li>In Brixa, select <strong>Hotels</strong> in the left menu, open the hotel's settings page and go to the <strong>PMS Integration</strong> section.</li>
+  <li>Choose <strong>Cloudbeds</strong>, then select <strong>Connect with Cloudbeds</strong>. Your browser goes to Cloudbeds.</li>
+  <li>Sign in to Cloudbeds and approve the connection.</li>
+  <li>Back in Brixa, if your Cloudbeds account has several properties, pick the one for this hotel.</li>
+</ol>
+
+<h2>Connect from the Cloudbeds Marketplace</h2>
+<p>In the Cloudbeds Marketplace, select <strong>Connect</strong> on the Brixa listing. This opens Brixa: sign in to Brixa and pick the hotel you want to connect.</p>
+
+<h2>What syncs</h2>
+<ul>
+  <li>Your room types, with their photos and descriptions, and how many adults and children each one takes.</li>
+  <li>Your rate plans.</li>
+  <li>Your cancellation policies. See the next section.</li>
+</ul>
+<p>Rates become bookable through Brixa once their cancellation policies have been read from Cloudbeds.</p>
+<p>The sync controls in the PMS Integration section work as before. See <a href="sync-behavior.html">What Syncs Between Brixa and Your PMS</a>.</p>
+
+<h2>Cancellation policies and test bookings</h2>
+<p>Cloudbeds does not let Brixa look up your cancellation policies directly, so Brixa reads them through test reservations that it cancels immediately. In Cloudbeds they appear as <strong>cancelled</strong> reservations named <strong>Brixa Policy-Check</strong>. No fee is charged and no email is sent.</p>
+<ul>
+  <li>Test reservations need <strong>Manage reservations</strong> to be switched on in the PMS Integration section. Switch it on, then sync again. Until then Brixa cannot read your policies, and the rates stay unavailable.</li>
+  <li>If you change a policy in Cloudbeds, sync again so Brixa picks up the change. Until you do, Brixa keeps using the previous terms.</li>
+  <li>If none of the rates using a policy can be booked in Cloudbeds, the policy stays inactive and those rates stay unavailable in Brixa. Make sure one of them can be booked, then sync again.</li>
+</ul>
+
+<h2>Notes that need attention</h2>
+<p>After a sync, Brixa may show a note under <strong>Needs attention</strong>. The most common ones:</p>
+<ul>
+  <li><em>Cloudbeds cancellation policies are read with a test booking, which needs reservation writes enabled for this hotel.</em> Switch on <strong>Manage reservations</strong> and sync again.</li>
+  <li><em>The following cancellation policy will remain inactive…</em> Brixa could not read that policy. Check that a rate using it can be booked in Cloudbeds, then sync again.</li>
+  <li><em>A Brixa test booking could not be cancelled automatically…</em> Find the reservation named Brixa Policy-Check in Cloudbeds and cancel it yourself.</li>
+  <li><em>Cloudbeds doesn't share age ranges with partners yet…</em> This message appears on every age sync and is expected. See the next section.</li>
+</ul>
+
+<h2>Children and ages</h2>
+<p>Cloudbeds knows two kinds of guests, adults and children, and does not share age ranges with Brixa. Brixa quotes and books both, including the extra charges you set in Cloudbeds for additional adults and children. Set up the age groups in Brixa yourself:</p>
+<ol>
+  <li>Open the hotel's settings in Brixa and go to the guest age groups.</li>
+  <li><strong>Disable Infants.</strong> Cloudbeds treats a baby as a child.</li>
+  <li>Set the <strong>child age limit</strong> to match your hotel's child policy. Adults start from the next age.</li>
+  <li>If your hotel does not take children, <strong>disable Children</strong> as well.</li>
+</ol>
+
+<h2>How bookings work with Cloudbeds</h2>
+<p>Cloudbeds does not hold rooms tentatively. With <strong>Manage reservations</strong> switched on, what happens when a guest accepts a quote depends on the quote's cancellation policy (see <a href="../payments/payment-at-booking.html">Ask Guests to Pay or Leave a Card at Booking</a>):</p>
+<ul>
+  <li>When the policy asks the guest to pay or leave a card, the quote shows <strong>Awaiting Guarantee</strong>, and the reservation is created in Cloudbeds as confirmed once the payment or card has come through. To collect it, connect Stripe; see <a href="../payments/connect-stripe.html">Connect Stripe</a>.</li>
+  <li>When the policy asks for nothing, the reservation is created as soon as the guest accepts, with no <strong>Awaiting Guarantee</strong> stage.</li>
+  <li>When the policy is set to <strong>Per the payment instructions</strong>, you collect the payment yourself and the reservation is created in Cloudbeds when your staff confirm the quote.</li>
+</ul>
+<p>In every case:</p>
+<ul>
+  <li>Brixa books on the <strong>Website/Booking Engine</strong> source, with <strong>Cash</strong> as the payment method. Payments collected through Stripe stay in Stripe; see <a href="../payments/payments-at-check-in.html">Payments at Check-in</a>.</li>
+  <li>Cloudbeds does not send its own confirmation email for these bookings. Brixa sends the guest messages.</li>
+  <li>If your property charges a fee that is <strong>fixed per reservation</strong>, Brixa does not create bookings with more than one room in Cloudbeds. Your team gets an alert and enters the booking in Cloudbeds. Bookings with one room are not affected.</li>
+</ul>
+
+<h2>Cancellations</h2>
+<p>When your team cancels a reservation in Cloudbeds, the cancellation shows up in Brixa as well.</p>
+
+<h2>Disconnect</h2>
+<p>Go to the hotel's settings page, open the <strong>PMS Integration</strong> section and select <strong>Disconnect</strong>. To connect again, repeat the steps above.</p>
