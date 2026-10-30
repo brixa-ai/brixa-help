@@ -30,7 +30,7 @@
 <h2>Cancellation policies and test bookings</h2>
 <p>Cloudbeds does not let Brixa look up your cancellation policies directly, so Brixa reads them through test reservations that it cancels immediately. In Cloudbeds they appear as <strong>cancelled</strong> reservations named <strong>Brixa Policy-Check</strong>. No fee is charged and no email is sent.</p>
 <ul>
-  <li>Test reservations need <strong>reservation writes</strong> to be turned on for the hotel. Turn them on in the PMS Integration section, then sync again. Until then Brixa cannot read your policies, and the rates stay unavailable.</li>
+  <li>Test reservations need <strong>Manage reservations</strong> to be switched on in the PMS Integration section. Switch it on, then sync again. Until then Brixa cannot read your policies, and the rates stay unavailable.</li>
   <li>If you change a policy in Cloudbeds, sync again so Brixa picks up the change. Until you do, Brixa keeps using the previous terms.</li>
   <li>If none of the rates using a policy can be booked in Cloudbeds, the policy stays inactive and those rates stay unavailable in Brixa. Make sure one of them can be booked, then sync again.</li>
 </ul>
@@ -38,7 +38,7 @@
 <h2>Notes that need attention</h2>
 <p>After a sync, Brixa may show a note under <strong>Needs attention</strong>. The most common ones:</p>
 <ul>
-  <li><em>Cloudbeds cancellation policies are read with a test booking, which needs reservation writes enabled for this hotel.</em> Turn on reservation writes and sync again.</li>
+  <li><em>Cloudbeds cancellation policies are read with a test booking, which needs reservation writes enabled for this hotel.</em> Switch on <strong>Manage reservations</strong> and sync again.</li>
   <li><em>The following cancellation policy will remain inactive…</em> Brixa could not read that policy. Check that a rate using it can be booked in Cloudbeds, then sync again.</li>
   <li><em>A Brixa test booking could not be cancelled automatically…</em> Find the reservation named Brixa Policy-Check in Cloudbeds and cancel it yourself.</li>
   <li><em>Cloudbeds doesn't share age ranges with partners yet…</em> This message appears on every age sync and is expected. See the next section.</li>
@@ -54,11 +54,17 @@
 </ol>
 
 <h2>How bookings work with Cloudbeds</h2>
+<p>Cloudbeds does not hold rooms tentatively. With <strong>Manage reservations</strong> switched on, what happens when a guest accepts a quote depends on the quote's cancellation policy (see <a href="../payments/payment-at-booking.html">Ask Guests to Pay or Leave a Card at Booking</a>):</p>
 <ul>
-  <li>The guest first pays through your payment link in Brixa. The reservation is then created in Cloudbeds as confirmed.</li>
-  <li>Brixa books on the <strong>Website/Booking Engine</strong> source, with <strong>Cash</strong> as the payment method.</li>
+  <li>When the policy asks the guest to pay or leave a card, the quote shows <strong>Awaiting Guarantee</strong>, and the reservation is created in Cloudbeds as confirmed once the payment or card has come through. To collect it, connect Stripe; see <a href="../payments/connect-stripe.html">Connect Stripe</a>.</li>
+  <li>When the policy asks for nothing, the reservation is created as soon as the guest accepts, with no <strong>Awaiting Guarantee</strong> stage.</li>
+  <li>When the policy is set to <strong>Per the payment instructions</strong>, you collect the payment yourself and the reservation is created in Cloudbeds when your staff confirm the quote.</li>
+</ul>
+<p>In every case:</p>
+<ul>
+  <li>Brixa books on the <strong>Website/Booking Engine</strong> source, with <strong>Cash</strong> as the payment method. Payments collected through Stripe stay in Stripe; see <a href="../payments/payments-at-check-in.html">Payments at Check-in</a>.</li>
   <li>Cloudbeds does not send its own confirmation email for these bookings. Brixa sends the guest messages.</li>
-  <li>If your property charges a fee that is <strong>fixed per reservation</strong>, Brixa does not create bookings with more than one room in Cloudbeds, because Cloudbeds charges that fee once while Brixa priced it per room. Your team gets an alert and enters the booking in Cloudbeds. Bookings with one room are not affected.</li>
+  <li>If your property charges a fee that is <strong>fixed per reservation</strong>, Brixa does not create bookings with more than one room in Cloudbeds. Your team gets an alert and enters the booking in Cloudbeds. Bookings with one room are not affected.</li>
 </ul>
 
 <h2>Cancellations</h2>
