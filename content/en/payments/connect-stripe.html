@@ -5,11 +5,12 @@
 
 <h2>What you need</h2>
 <ul>
-  <li>A Stripe account that belongs to the hotel. The person who owns it must be the one who logs in during the connection.</li>
+  <li>The person who owns the hotel's business, or is allowed to act for it, to fill in Stripe's setup form: identity, business details and the bank account payouts go to.</li>
+  <li>The country where that business is registered, and Stripe must support it. It is usually the hotel's country, but it does not have to be: a hotel in Costa Rica owned by a company registered in the United States connects as the United States.</li>
   <li>The Stripe account's currency must match the currency set for the hotel in Brixa. If they differ, the connection is saved but no payment links are created until they match.</li>
   <li>A Brixa login with the hotel admin role. Admins see <strong>Hotel Settings</strong> in the menu; other staff do not.</li>
 </ul>
-<p>A Stripe account created and managed by another platform (for example, by a booking engine) cannot be connected. Stripe also does not accept card payments in every country; if Stripe is not available where your hotel operates, this feature is not available either.</p>
+<p>A Stripe account created and managed by another platform (for example, by a booking engine) cannot be connected. Stripe does not accept card payments for businesses in every country: if neither the hotel's country nor the country of a company that owns it is supported, this feature is not available.</p>
 
 <h2>Step 1 — Open Payments</h2>
 <ol>
@@ -17,13 +18,18 @@
   <li>Select <strong>Payments</strong>; the page is headed <strong>Payments Settings</strong>. The <strong>Stripe</strong> card shows <strong>No Stripe account connected</strong>.</li>
 </ol>
 
-<h2>Step 2 — Connect with Stripe</h2>
+<h2>Step 2 — Choose the business country</h2>
+<p>Under <strong>Business country</strong>, check the country where the business that owns the hotel's Stripe account is registered. Brixa fills in the hotel's own country when Stripe supports it; change it if the hotel belongs to a company registered elsewhere. The list shows only the countries Stripe supports.</p>
+<p>If the hotel's country is not one of them, the card says so and leaves the field empty: pick the country of the company that owns the hotel.</p>
+<p>Take care with this choice: Stripe creates the account in that country, and it cannot be changed afterwards. To use another country later, contact Brixa support.</p>
+
+<h2>Step 3 — Connect with Stripe</h2>
 <ol>
   <li>Select <strong>Connect with Stripe</strong>. Brixa takes you to Stripe.</li>
-  <li>Log in to Stripe as the owner of the hotel's account and approve the connection. Brixa asks only for what it needs to create payment links and read their status.</li>
+  <li>Fill in Stripe's form for the hotel's account. If you already use Stripe, you can sign in to reuse the details you gave it before.</li>
   <li>Stripe returns you to Brixa. The card now reads <strong>Connected</strong> with the account's name, its currency and the date of the connection.</li>
 </ol>
-<p>If you close or cancel the Stripe screen, Brixa shows <strong>The connection was cancelled in Stripe</strong>. Nothing was changed; select <strong>Connect with Stripe</strong> again when you are ready.</p>
+<p>If you leave Stripe's form before finishing, the card reads <strong>Stripe setup isn't finished.</strong> Select <strong>Continue setup</strong> to go back; Stripe keeps what you already entered.</p>
 
 <h2>Reading the Stripe card</h2>
 <ul>
