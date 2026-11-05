@@ -58,7 +58,7 @@
 <ul>
   <li>When the policy asks the guest to pay or leave a card, or is set to <strong>Per the payment instructions</strong>, the quote shows <strong>Awaiting Guarantee</strong> and the reservation is created in Cloudbeds in <strong>Confirmation Pending</strong> status, which holds the room. Brixa confirms it once the payment or card has come through; to collect it through Brixa, connect Stripe (see <a href="../payments/connect-stripe.html">Connect Stripe</a>). If you collect the guarantee yourself, confirm the quote in Brixa after you have collected it and Brixa confirms the reservation in Cloudbeds.</li>
   <li>When the policy asks for nothing, the reservation is created as confirmed as soon as the guest accepts, with no <strong>Awaiting Guarantee</strong> stage.</li>
-  <li>If the quote expires without a guarantee, Brixa cancels the pending reservation in Cloudbeds and the room goes back on sale.</li>
+  <li>If the quote expires without a guarantee, Brixa cancels the pending reservation in Cloudbeds about 10 to 15 minutes later and the room goes back on sale. Brixa only ever cancels reservations it created itself; a booking a guest made elsewhere and looked up in Brixa is never touched.</li>
 </ul>
 <p>Brixa's pending reservations appear in your <strong>Confirmation Pending</strong> list in Cloudbeds. If you confirm one there, the quote becomes confirmed in Brixa and the guest's open payment link stops working, so do this only after you have collected the guarantee yourself. In the Cloudbeds activity log, a reservation Brixa holds can show as confirmed for a moment before it turns pending. This is expected.</p>
 <p>In every case:</p>
