@@ -28,7 +28,7 @@
 <p>The sync controls in the PMS Integration section work as before. See <a href="sync-behavior.html">What Syncs Between Brixa and Your PMS</a>.</p>
 
 <h2>Cancellation policies and test bookings</h2>
-<p>Cloudbeds does not let Brixa look up your cancellation policies directly, so Brixa reads them through test reservations that it cancels immediately. In Cloudbeds they appear as <strong>cancelled</strong> reservations named <strong>Brixa Policy-Check</strong>. No fee is charged and no email is sent.</p>
+<p>Syncing cancellation policies from Cloudbeds creates test reservations that Brixa cancels immediately. In Cloudbeds they appear as <strong>cancelled</strong> reservations named <strong>Brixa Policy-Check</strong>; they never hold a room for a guest, no fee is charged and no email is sent.</p>
 <ul>
   <li>Test reservations need <strong>Manage reservations</strong> to be switched on in the PMS Integration section. Switch it on, then sync again. Until then Brixa cannot read your policies, and the rates stay unavailable.</li>
   <li>If you change a policy in Cloudbeds, sync again so Brixa picks up the change. Until you do, Brixa keeps using the previous terms.</li>
