@@ -118,6 +118,7 @@
       "articleOrder": [
         "pms-connection-setup",
         "connect-apaleo",
+        "connect-cloudbeds",
         "sync-behavior",
         "integration-errors-and-recovery"
       ]

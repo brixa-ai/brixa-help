@@ -6,11 +6,11 @@
 <ul>
 <li>Modifies your rates, rate plans, or pricing rules</li>
 <li>Adds, removes, or reconfigures room types</li>
-<li>Edits or cancels reservations in your PMS on its own — see below for the one case where it acts</li>
+<li>Edits or cancels a reservation it did not create — see below for what it does with its own</li>
 <li>Blocks inventory or changes restrictions</li>
 </ul>
-<p>The only thing Brixa ever creates in your PMS is a new reservation from an accepted quote — and only if you have enabled that.</p>
-<p>Brixa changes a reservation in your PMS only when the guest asks for it through Brixa. A cancellation the guest requests in the conversation cancels, in your PMS, the reservation Brixa holds for that quote (a hold or booking Brixa created, or a booking the guest identified by booking number), once your PMS allows it. If your PMS refuses, your team gets an alert and nothing is changed. Cancelling a quote yourself from the quote page does not touch your PMS, so cancel the reservation there as well.</p>
+<p>The only thing Brixa ever creates in your PMS is a new reservation from an accepted quote — and only if you have enabled that. One exception: with some PMSs, Cloudbeds for example, syncing cancellation policies creates test reservations that Brixa cancels immediately. They appear as cancelled reservations named Brixa Policy-Check and never hold a room for a guest. See <a href="connect-cloudbeds.html">Connect Cloudbeds</a>.</p>
+<p>Brixa changes a reservation it created in two cases. When the guest asks for it through Brixa: a cancellation the guest requests in the conversation cancels, in your PMS, the hold or booking Brixa created for that quote, once your PMS allows it. And when a quote expires without its guarantee: the hold Brixa created for that quote ends a few minutes after the expiry — released by your PMS or cancelled by Brixa — and the room goes back on sale (see <a href="../quotes-and-offers/quote-statuses.html">Quote Statuses Explained</a>). If your PMS refuses a change, your team gets an alert and nothing is changed. A booking the guest made elsewhere and looked up in Brixa by booking number is never cancelled by Brixa, neither at expiry nor on the guest's request: your team gets an alert and cancels it where it was made. Cancelling a quote yourself from the quote page does not touch your PMS, so cancel the reservation there as well.</p>
 
 <h2>What does Brixa fill in when it syncs my room types?</h2>
 <p>Room types themselves always come from your PMS. When Brixa syncs a room type, it also fills in a few details on the Brixa side to save you setup work:</p>
@@ -19,6 +19,7 @@
 <li><strong>Description.</strong> If your PMS has a description for the room type, Brixa imports it.</li>
 <li><strong>Photos.</strong> Brixa imports the room type's photos from your PMS when it provides them. Apaleo does not, so with Apaleo you upload room type and hotel photos in Brixa; see <a href="connect-apaleo.html">Connect Apaleo</a>.</li>
 </ul>
+<p><strong>Hotel photos.</strong> With Mews and Cloudbeds, pressing <strong>Sync</strong> on <strong>Hotel Images</strong> adds your hotel photos from the PMS to the ones already in Brixa; nothing in Brixa is replaced or removed. Apaleo does not provide hotel photos.</p>
 <p>None of this changes anything in your PMS — it only fills in details on the Brixa side. If a room type was synced before this existed and is missing a bed arrangement, description, or photos, the next sync fills in whatever is still empty. Anything you already entered or edited by hand is left exactly as you set it.</p>
 
 <h2>Do quotes reflect my real availability?</h2>
@@ -28,7 +29,7 @@
 <p>In your PMS, when automatic reservation creation is enabled for your hotel. The reservation carries what the guest agreed to — dates, the selected room, guest count, and price — along with the guest's contact details, and its notes include any special requests from the conversation, so your front desk works from the PMS as usual. If automatic creation is not enabled, your team enters accepted bookings manually from the booking view in Brixa. See <a href="../reservations/reservation-flow.html">From Accepted Quote to Reservation</a> for the full picture.</p>
 
 <h2>Do I need to trigger anything?</h2>
-<p>No. There are no exports to run, buttons to press, or sync schedules to manage. Your day-to-day PMS work does not change.</p>
+<p>Not for day-to-day work: there are no exports to run or sync schedules to manage, and your PMS routine does not change. The one thing to remember: after you change a cancellation policy in your PMS, sync <strong>Cancellation policies</strong> again in the hotel's PMS Integration section, because Brixa keeps quoting the previous terms until you do.</p>
 
 <h2>Which system should I trust?</h2>
 <p>Your PMS is always the source of truth. It is the record that counts for operations, billing, and reporting. If Brixa and your PMS ever seem to disagree, trust the PMS and see <a href="integration-errors-and-recovery.html">PMS Issues and Recovery</a> for what to do next.</p>
