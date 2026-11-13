@@ -57,7 +57,8 @@
       "articleOrder": [
         "reservation-readiness",
         "reservation-flow",
-        "reservation-states"
+        "reservation-states",
+        "guest-confirmation-email"
       ]
     },
     {
@@ -118,6 +119,7 @@
       "articleOrder": [
         "pms-connection-setup",
         "connect-apaleo",
+        "connect-cloudbeds",
         "sync-behavior",
         "integration-errors-and-recovery"
       ]
