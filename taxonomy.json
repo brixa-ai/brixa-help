@@ -120,6 +120,7 @@
         "pms-connection-setup",
         "connect-apaleo",
         "connect-cloudbeds",
+        "connect-pxsol",
         "sync-behavior",
         "integration-errors-and-recovery"
       ]
